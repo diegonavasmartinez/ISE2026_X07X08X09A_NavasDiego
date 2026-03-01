@@ -4,6 +4,7 @@
 ".\debug\http_server_cgi.o"
 ".\debug\web.o"
 ".\debug\lcd.o"
+".\debug\adc.o"
 ".\debug\buttons_nucleo_f429zi.o"
 ".\debug\led_nucleo_f429zi.o"
 ".\debug\irq_armv7m.o"

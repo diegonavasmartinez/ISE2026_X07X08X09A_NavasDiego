@@ -44,3 +44,4 @@
 .\debug\http_server.o: LCD.h
 .\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Driver\Include\Driver_SPI.h
 .\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Driver\Include\Driver_Common.h
+.\debug\http_server.o: adc.h

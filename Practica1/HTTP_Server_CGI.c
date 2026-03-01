@@ -165,7 +165,6 @@ void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
       }
       if (strncmp (var, "lcd1=", 5) == 0) {
         strncpy (lcd_text[0], var+5, 20);
-        // Despierta al hilo Display de HTTP_Server.c
 				osThreadFlagsSet (TID_Display, 0x01);
     }
     else if (strncmp (var, "lcd2=", 5) == 0) {

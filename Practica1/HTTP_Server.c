@@ -15,10 +15,11 @@
 #include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "Board_LED.h"                  // ::Board Support:LED
 #include "Board_Buttons.h"              // ::Board Support:Buttons
-#include "Board_ADC.h"                  // ::Board Support:A/D Converter
+//#include "Board_ADC.h"                  // ::Board Support:A/D Converter
 #include "Board_GLCD.h"                 // ::Board Support:Graphic LCD
 //#include "GLCD_Config.h"                // Keil.MCBSTM32F400::Board Support:Graphic LCD
 #include "LCD.h"
+#include "adc.h"
 #include <stdio.h>
 
 // Main stack size must be multiple of 8 Bytes
@@ -57,16 +58,22 @@ static void Display  (void *arg);
 
 __NO_RETURN void app_main (void *arg);
 
-/* Read analog inputs */
-uint16_t AD_in (uint32_t ch) {
-  int32_t val = 0;
 
-  if (ch == 0) {
-    ADC_StartConversion();
-    while (ADC_ConversionDone () < 0);
-    val = ADC_GetValue();
-  }
-  return ((uint16_t)val);
+uint16_t AD_in (uint32_t ch) {
+  // En lugar de ADC_StartConversion...
+  // Usamos tu función de adc.c (asumiendo que quieres el valor crudo)
+  static float raw=0;
+	static uint16_t value;
+	ADC_HandleTypeDef adchandle;
+
+	
+	if(ch==0){
+		ADC_Init_Single_Conversion(&adchandle, ADC1);
+	}
+	
+	raw=ADC_getVoltage(&adchandle, 10);
+	value=(uint16_t)raw;
+	return (uint16_t)(raw*1250);
 }
 
 /* Read digital inputs */
@@ -92,8 +99,7 @@ void netDHCP_Notify (uint32_t if_num, uint8_t option, const uint8_t *val, uint32
  *---------------------------------------------------------------------------*/
 static __NO_RETURN void Display (void *arg) {
 
-MSGQUEUELCD_OBJ_t msg;
-
+	MSGQUEUELCD_OBJ_t msg;
   LCD_reset();
 	LCD_init();
 	clean_buffer();
@@ -101,18 +107,16 @@ MSGQUEUELCD_OBJ_t msg;
   while(1) {
 
     osThreadFlagsWait (0x01U, osFlagsWaitAny, osWaitForever);
-
-
+		
 		msg.reset = true;
     msg.linea = 1;
 		snprintf(msg.cadena, sizeof(msg.cadena), "%s", lcd_text[0]);
     write_LCD(msg.cadena, msg.linea, msg.reset);
 
-    // 2. Enviar el texto del usuario (recibido por CGI) a la Línea 2
     msg.linea = 2;
     msg.reset = false; // No reset para no borrar la línea 1
     snprintf(msg.cadena, sizeof(msg.cadena), "%s", lcd_text[1]);
-		 write_LCD(msg.cadena, msg.linea, msg.reset);
+		write_LCD(msg.cadena, msg.linea, msg.reset);
   }
 }
 
@@ -147,8 +151,7 @@ __NO_RETURN void app_main (void *arg) {
 
   LED_Initialize();
   Buttons_Initialize();
-  ADC_Initialize();
-	//LCD_init();
+	ADC1_pins_F429ZI_config();
 	
   netInitialize ();
 
