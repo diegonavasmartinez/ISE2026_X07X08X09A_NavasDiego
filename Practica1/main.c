@@ -39,6 +39,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "LCD.h"
 
 #ifdef RTE_CMSIS_RTOS2_RTX5
 /**
@@ -98,6 +99,7 @@ int main(void)
        - Low Level Initialization
      */
   HAL_Init();
+//  Init_LCD();
 
   /* Configure the system clock to 168 MHz */
   SystemClock_Config();

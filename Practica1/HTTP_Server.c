@@ -18,6 +18,8 @@
 #include "Board_ADC.h"                  // ::Board Support:A/D Converter
 #include "Board_GLCD.h"                 // ::Board Support:Graphic LCD
 //#include "GLCD_Config.h"                // Keil.MCBSTM32F400::Board Support:Graphic LCD
+#include "LCD.h"
+#include <stdio.h>
 
 // Main stack size must be multiple of 8 Bytes
 #define APP_MAIN_STK_SZ (1024U)
@@ -40,6 +42,7 @@ extern char lcd_text[2][20+1];
 extern osThreadId_t TID_Display;
 extern osThreadId_t TID_Led;
 
+
 bool LEDrun;
 char lcd_text[2][20+1] = { "LCD line 1",
                            "LCD line 2" };
@@ -59,9 +62,9 @@ uint16_t AD_in (uint32_t ch) {
   int32_t val = 0;
 
   if (ch == 0) {
-//    ADC_StartConversion();
-//    while (ADC_ConversionDone () < 0);
-//    val = ADC_GetValue();
+    ADC_StartConversion();
+    while (ADC_ConversionDone () < 0);
+    val = ADC_GetValue();
   }
   return ((uint16_t)val);
 }
@@ -88,52 +91,28 @@ void netDHCP_Notify (uint32_t if_num, uint8_t option, const uint8_t *val, uint32
   Thread 'Display': LCD display handler
  *---------------------------------------------------------------------------*/
 static __NO_RETURN void Display (void *arg) {
-  static uint8_t ip_addr[NET_ADDR_IP6_LEN];
-  static char    ip_ascii[40];
-  static char    buf[24];
-  uint32_t x = 0;
 
-  (void)arg;
+MSGQUEUELCD_OBJ_t msg;
 
-//  GLCD_Initialize         ();
-//  GLCD_SetBackgroundColor (GLCD_COLOR_BLUE);
-//  GLCD_SetForegroundColor (GLCD_COLOR_WHITE);
-//  GLCD_ClearScreen        ();
-//  GLCD_SetFont            (&GLCD_Font_16x24);
-//  GLCD_DrawString         (x*16U, 1U*24U, "       MDK-MW       ");
-//  GLCD_DrawString         (x*16U, 2U*24U, "HTTP Server example ");
-
-//  GLCD_DrawString (x*16U, 4U*24U, "IP4:Waiting for DHCP");
-
-  /* Print Link-local IPv6 address */
-  netIF_GetOption (NET_IF_CLASS_ETH,
-                   netIF_OptionIP6_LinkLocalAddress, ip_addr, sizeof(ip_addr));
-
-  netIP_ntoa(NET_ADDR_IP6, ip_addr, ip_ascii, sizeof(ip_ascii));
-
-//  sprintf (buf, "IP6:%.16s", ip_ascii);
-//  GLCD_DrawString ( x    *16U, 5U*24U, buf);
-//  sprintf (buf, "%s", ip_ascii+16);
-//  GLCD_DrawString ((x+10U)*16U, 6U*24U, buf);
+  LCD_reset();
+	LCD_init();
+	clean_buffer();
 
   while(1) {
-    /* Wait for signal from DHCP */
+
     osThreadFlagsWait (0x01U, osFlagsWaitAny, osWaitForever);
 
-    /* Retrieve and print IPv4 address */
-    netIF_GetOption (NET_IF_CLASS_ETH,
-                     netIF_OptionIP4_Address, ip_addr, sizeof(ip_addr));
 
-    netIP_ntoa (NET_ADDR_IP4, ip_addr, ip_ascii, sizeof(ip_ascii));
+		msg.reset = true;
+    msg.linea = 1;
+		snprintf(msg.cadena, sizeof(msg.cadena), "%s", lcd_text[0]);
+    write_LCD(msg.cadena, msg.linea, msg.reset);
 
-//    sprintf (buf, "IP4:%-16s",ip_ascii);
-//    GLCD_DrawString (x*16U, 4U*24U, buf);
-
-    /* Display user text lines */
-//    sprintf (buf, "%-20s", lcd_text[0]);
-//    GLCD_DrawString (x*16U, 7U*24U, buf);
-//    sprintf (buf, "%-20s", lcd_text[1]);
-//    GLCD_DrawString (x*16U, 8U*24U, buf);
+    // 2. Enviar el texto del usuario (recibido por CGI) a la Línea 2
+    msg.linea = 2;
+    msg.reset = false; // No reset para no borrar la línea 1
+    snprintf(msg.cadena, sizeof(msg.cadena), "%s", lcd_text[1]);
+		 write_LCD(msg.cadena, msg.linea, msg.reset);
   }
 }
 
@@ -168,8 +147,9 @@ __NO_RETURN void app_main (void *arg) {
 
   LED_Initialize();
   Buttons_Initialize();
- // ADC_Initialize();
-
+  ADC_Initialize();
+	//LCD_init();
+	
   netInitialize ();
 
   TID_Led     = osThreadNew (BlinkLed, NULL, NULL);

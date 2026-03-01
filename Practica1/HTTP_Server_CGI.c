@@ -32,6 +32,8 @@ static uint8_t P2;
 static uint8_t ip_addr[NET_ADDR_IP6_LEN];
 static char    ip_string[40];
 
+extern osMessageQueueId_t id_MsgQueueLCD;
+
 // My structure of CGI status variable.
 typedef struct {
   uint8_t idx;
@@ -161,16 +163,15 @@ void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
           }
         }
       }
-      else if (strncmp (var, "lcd1=", 5) == 0) {
-        // LCD Module line 1 text
-        strcpy (lcd_text[0], var+5);
+      if (strncmp (var, "lcd1=", 5) == 0) {
+        strncpy (lcd_text[0], var+5, 20);
+        // Despierta al hilo Display de HTTP_Server.c
+				osThreadFlagsSet (TID_Display, 0x01);
+    }
+    else if (strncmp (var, "lcd2=", 5) == 0) {
+        strncpy (lcd_text[1], var+5, 20);
         osThreadFlagsSet (TID_Display, 0x01);
-      }
-      else if (strncmp (var, "lcd2=", 5) == 0) {
-        // LCD Module line 2 text
-        strcpy (lcd_text[1], var+5);
-        osThreadFlagsSet (TID_Display, 0x01);
-      }
+    }
     }
   } while (data);
   LED_SetOut (P2);
