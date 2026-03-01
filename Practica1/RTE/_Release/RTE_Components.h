@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'HTTP_Server' 
- * Target:  'Debug' 
+ * Target:  'Release' 
  */
 
 #ifndef RTE_COMPONENTS_H
@@ -16,18 +16,14 @@
  */
 #define CMSIS_device_header "stm32f4xx.h"
 
-/* ARM::CMSIS:RTOS2:Keil RTX5:Source:5.5.3 */
+/* ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.3 */
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
         #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
-        #define RTE_CMSIS_RTOS2_RTX5_SOURCE     /* CMSIS-RTOS2 Keil RTX5 Source */
-/* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
-#define RTE_Compiler_EventRecorder
-          #define RTE_Compiler_EventRecorder_DAP
-/* Keil.MDK-Pro::Network:CORE:IPv4/IPv6 Debug:7.17.0 */
+/* Keil.MDK-Pro::Network:CORE:IPv4/IPv6 Release:7.17.0 */
 #define RTE_Network_Core                /* Network Core */
           #define RTE_Network_IPv4                /* Network IPv4 Stack */
           #define RTE_Network_IPv6                /* Network IPv6 Stack */
-          #define RTE_Network_Debug               /* Network Debug Version */
+          #define RTE_Network_Release             /* Network Release Version */
 /* Keil.MDK-Pro::Network:Interface:ETH:7.17.0 */
 #define RTE_Network_Interface_ETH_0     /* Network Interface ETH 0 */
 
@@ -39,8 +35,8 @@
 #define RTE_Network_Socket_UDP          /* Network Socket UDP */
 /* Keil::CMSIS Driver:Ethernet MAC:2.9 */
 #define RTE_Drivers_ETH_MAC0            /* Driver ETH_MAC0 */
-/* Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.3.0 */
-#define RTE_Drivers_PHY_LAN8742A        /* Driver PHY LAN8742A */
+/* Keil::CMSIS Driver:Ethernet PHY:KSZ8081RNA:6.3.0 */
+#define RTE_Drivers_PHY_KSZ8081RNA      /* Driver PHY KSZ8081RNA/RND */
 /* Keil::Device:STM32Cube Framework:Classic:1.7.9 */
 #define RTE_DEVICE_FRAMEWORK_CLASSIC
 /* Keil::Device:STM32Cube HAL:ADC:1.7.9 */
@@ -57,8 +53,6 @@
 #define RTE_DEVICE_HAL_PWR
 /* Keil::Device:STM32Cube HAL:RCC:1.7.9 */
 #define RTE_DEVICE_HAL_RCC
-/* Keil::Device:STM32Cube HAL:SPI:1.7.9 */
-#define RTE_DEVICE_HAL_SPI
 /* Keil::Device:STM32Cube HAL:SRAM:1.7.9 */
 #define RTE_DEVICE_HAL_SRAM
 /* Keil::Device:Startup:2.6.3 */
