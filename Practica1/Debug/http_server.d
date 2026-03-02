@@ -39,7 +39,6 @@
 .\debug\http_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Board\Board_LED.h
 .\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Board\Board_Buttons.h
-.\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Board\Board_ADC.h
 .\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Board\Board_GLCD.h
 .\debug\http_server.o: LCD.h
 .\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Driver\Include\Driver_SPI.h
