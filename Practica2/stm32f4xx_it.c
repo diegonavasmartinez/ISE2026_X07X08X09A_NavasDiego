@@ -90,7 +90,7 @@ void EXTI15_10_IRQHandler(void){
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_PIN){
-  if(GPIO_PIN == GPIO_PIN_0){ //Pin del pulsador
+  if(GPIO_PIN == GPIO_PIN_13){ //Pin del pulsador
     osThreadFlagsSet(TID_SNTP, 0x01U);
   }
 }

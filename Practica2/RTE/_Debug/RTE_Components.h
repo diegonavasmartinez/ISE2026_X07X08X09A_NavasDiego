@@ -78,8 +78,6 @@
 #define RTE_DEVICE_LL_PWR
 /* Keil::Device:STM32Cube LL:RCC:1.7.9 */
 #define RTE_DEVICE_LL_RCC
-/* Keil::Device:STM32Cube LL:RTC:1.7.9 */
-#define RTE_DEVICE_LL_RTC
 /* Keil::Device:STM32Cube LL:UTILS:1.7.9 */
 #define RTE_DEVICE_LL_UTILS
 /* Keil::Device:Startup:2.6.3 */

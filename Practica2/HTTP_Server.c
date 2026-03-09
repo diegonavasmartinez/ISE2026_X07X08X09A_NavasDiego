@@ -19,6 +19,7 @@
 #include "adc.h"
 #include  "RTC.h"
 #include <stdio.h>
+#include "SNTP.h"
 
 // Main stack size must be multiple of 8 Bytes
 #define APP_MAIN_STK_SZ (1024U)
@@ -40,6 +41,8 @@ extern char lcd_text[2][20+1];
 
 uint8_t aShowTime[10] = {0};
 uint8_t aShowDate[10] = {0}; 
+
+
 
 //extern osThreadId_t TID_Display;
 //extern osThreadId_t TID_Led;
@@ -65,6 +68,8 @@ uint16_t timer_1seg=0;
 //CALLBACKS TIMERS
 static void SetTimers (void);
 void Timer_Callback_1s (void);
+void Timer_Callback_6s (void);
+void Timer_Callback_3m (void);
 
 /* Thread declarations */
 static void BlinkLed (void *arg);
@@ -78,8 +83,8 @@ __NO_RETURN void app_main (void *arg);
 
 static void SetTimers (void){ 
 	id_tim_1s= osTimerNew((osTimerFunc_t)Timer_Callback_1s, osTimerPeriodic, NULL,NULL);
-  id_tim_6s= osTimerNew((osTimerFunc_t)Timer_Callback_1s, osTimerPeriodic, NULL,NULL);
-	id_tim_3m= osTimerNew((osTimerFunc_t)Timer_Callback_1s, osTimerPeriodic, NULL,NULL);
+  id_tim_6s= osTimerNew((osTimerFunc_t)Timer_Callback_6s, osTimerOnce, NULL,NULL);
+	id_tim_3m= osTimerNew((osTimerFunc_t)Timer_Callback_3m, osTimerPeriodic, NULL,NULL);
 
 }
 
@@ -96,12 +101,12 @@ void Timer_Callback_1s (void){
 
 void Timer_Callback_6s (void){
 	osTimerStart(id_tim_1s, 200);
-	SNTP_INIT(); //reinicio por primera vez del SNTP como dice el enunciado (re-configuracion)
+	get_time(); //reinicio por primera vez del SNTP como dice el enunciado (re-configuracion)
 	osTimerStart(id_tim_3m,18000); //18000ms
 }
 void Timer_Callback_3m (void){
 	osTimerStart(id_tim_1s, 200);
-	SNTP_INIT(); //re sincronizacion a los 3 minutos
+	get_time(); //re sincronizacion a los 3 minutos
 	
 }
 
@@ -158,6 +163,10 @@ static __NO_RETURN void sincroSNTP (void *arg) {
 			sdatestructureget.Month=0x01;
 			sdatestructureget.Year=0x01;
 			sdatestructureget.WeekDay=0x00;
+			
+			HAL_RTC_SetTime(&RtcHandle, &stimestructureget, RTC_FORMAT_BCD);
+			HAL_RTC_SetDate(&RtcHandle, &sdatestructureget, RTC_FORMAT_BCD);
+			
 			for(int i= 0; i < 10; i++){
         HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
         osDelay(100);
@@ -238,15 +247,13 @@ static __NO_RETURN void parpadeoAlarma (void *arg) {
 			    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
           osDelay(500);
 			}
-		
-		}
-		
+		}	
   }
 }
 
 static __NO_RETURN void actualizarRTC (void *arg) {
 	
-//	osTimerStart(id_tim_6s, 6000);
+  //osTimerStart(id_tim_6s, 6000);
 
   while(1) {
 		RTC_CalendarShow(aShowTime, aShowDate);
@@ -282,6 +289,9 @@ __NO_RETURN void app_main (void *arg) {
 	setAlarma();
 	
 	SetTimers();
+	osTimerStart(id_tim_6s, 6000);
+	
+	init_Pulsador();
 
   //TID_Led     = osThreadNew (BlinkLed, NULL, NULL);
   TID_Display = osThreadNew (Display,  NULL, NULL);

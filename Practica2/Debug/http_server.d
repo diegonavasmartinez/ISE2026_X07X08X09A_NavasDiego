@@ -48,3 +48,7 @@
 .\debug\http_server.o: adc.h
 .\debug\http_server.o: RTC.h
 .\debug\http_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\debug\http_server.o: SNTP.h
+.\debug\http_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Network\Include\rl_net_lib.h
+.\debug\http_server.o: C:\Users\diego\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Network\Include\rl_net_rte.h
