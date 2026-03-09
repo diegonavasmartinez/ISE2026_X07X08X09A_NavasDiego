@@ -88,26 +88,28 @@ static void SetTimers (void){
 
 }
 
-void Timer_Callback_1s (void){
- 
- if(timer_1seg<10){
-		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-	   timer_1seg++;
- }else{
-   osTimerStop(id_tim_1s);
-	 timer_1seg=0;
- }
+void Timer_Callback_1s () { // Recordar el argumento void *
+  if (timer_1seg < 40) { // 40 veces a 100ms = 4 segundos
+    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14); // LED Rojo (PB14)
+    timer_1seg++;
+  } else {
+    osTimerStop(id_tim_1s);
+    timer_1seg = 0;
+  }
 }
 
-void Timer_Callback_6s (void){
-	osTimerStart(id_tim_1s, 200);
-	get_time(); //reinicio por primera vez del SNTP como dice el enunciado (re-configuracion)
-	osTimerStart(id_tim_3m,18000); //18000ms
+void Timer_Callback_6s () {
+  // Iniciamos el parpadeo configurado a 100ms (5Hz)
+  osTimerStart(id_tim_1s, 100); 
+  get_time(); 
+  // 3 minutos = 3 * 60 * 1000 = 180.000 ms
+  osTimerStart(id_tim_3m, 180000); 
 }
-void Timer_Callback_3m (void){
-	osTimerStart(id_tim_1s, 200);
-	get_time(); //re sincronizacion a los 3 minutos
-	
+
+void Timer_Callback_3m () {
+  timer_1seg = 0; // Reset contador por si acaso
+  osTimerStart(id_tim_1s, 100); 
+  get_time(); 
 }
 
 uint16_t AD_in (uint32_t ch) {
@@ -161,7 +163,7 @@ static __NO_RETURN void sincroSNTP (void *arg) {
 			
 			sdatestructureget.Date=0x01;
 			sdatestructureget.Month=0x01;
-			sdatestructureget.Year=0x01;
+			sdatestructureget.Year=0x00;
 			sdatestructureget.WeekDay=0x00;
 			
 			HAL_RTC_SetTime(&RtcHandle, &stimestructureget, RTC_FORMAT_BCD);

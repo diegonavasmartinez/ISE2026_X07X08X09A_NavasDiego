@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Debug\HTTP_Server.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Debug\HTTP_Server.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Mar 09 12:53:53 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Mar 09 13:10:29 2026
 <BR><P>
 <H3>Maximum Stack Usage =        392 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-net_eth_iface_run &rArr; net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+net_eth_iface_run &rArr; net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 <P>
 <H3>
 Mutually Recursive functions
@@ -857,16 +857,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;actualizarRTC
 </UL>
 
-<P><STRONG><a name="[15a]"></a>Timer_Callback_3m</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, http_server.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = Timer_Callback_3m &rArr; get_time &rArr; netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<P><STRONG><a name="[15a]"></a>Timer_Callback_3m</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, http_server.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = Timer_Callback_3m &rArr; get_time &rArr; netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osTimerStart
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_time
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> http_server.o(.text)
 </UL>
-<P><STRONG><a name="[15d]"></a>Timer_Callback_6s</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, http_server.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = Timer_Callback_6s &rArr; get_time &rArr; netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<P><STRONG><a name="[15d]"></a>Timer_Callback_6s</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, http_server.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = Timer_Callback_6s &rArr; get_time &rArr; netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osTimerStart
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_time
@@ -974,7 +974,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[15c]"></a>get_time</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, sntp.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = get_time &rArr; netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = get_time &rArr; netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netSNTPc_GetTime
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
@@ -2495,10 +2495,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxErrorNotify
 <LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxKernelErrorNotify
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTimerTick
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadTerminate
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadTerminate
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadExit
 <LI><a href="#[277]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxPostProcess
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTimerTick
 </UL>
 
 <P><STRONG><a name="[126]"></a>osKernelInitialize</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, rtx_kernel.o(.text))
@@ -2631,12 +2631,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryAlloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerNew
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreNew
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexNew
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolNew
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerNew
 </UL>
 
 <P><STRONG><a name="[268]"></a>osRtxMemoryFree</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, rtx_memory.o(.text))
@@ -2644,8 +2644,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryFree
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerDelete
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
 <LI><a href="#[2bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadFree
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreDelete
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
@@ -2653,6 +2652,7 @@ Global Symbols
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolDelete
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolNew
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerDelete
 </UL>
 
 <P><STRONG><a name="[24a]"></a>osRtxMemoryPoolInit</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, rtx_mempool.o(.text))
@@ -2672,8 +2672,7 @@ Global Symbols
 <LI><a href="#[26b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___13_rtx_mempool_c_7914b4c7__atomic_inc32
 <LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryBlockAlloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerNew
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreNew
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexNew
 <LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
@@ -2687,6 +2686,7 @@ Global Symbols
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolAlloc
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolNew
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolPostProcess
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerNew
 </UL>
 
 <P><STRONG><a name="[26c]"></a>osRtxMemoryPoolFree</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, rtx_mempool.o(.text))
@@ -2696,8 +2696,7 @@ Global Symbols
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___13_rtx_mempool_c_7914b4c7__atomic_dec32
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryBlockFree
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerDelete
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxThreadNew
 <LI><a href="#[2bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadFree
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxSemaphoreDelete
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMutexDelete
@@ -2710,6 +2709,7 @@ Global Symbols
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolDelete
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolFree
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolNew
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxTimerDelete
 </UL>
 
 <P><STRONG><a name="[271]"></a>osMemoryPoolNew</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, rtx_mempool.o(.text), UNUSED)
@@ -2801,7 +2801,8 @@ Global Symbols
 <P><STRONG><a name="[289]"></a>osMessageQueuePut</STRONG> (Thumb, 156 bytes, Stack size 24 bytes, rtx_msgqueue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = osMessageQueuePut &rArr; EvrRtxMessageQueuePut &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
 <LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
 <LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueNotInserted
 <LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueInsertPending
@@ -2809,7 +2810,6 @@ Global Symbols
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueError
 <LI><a href="#[277]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxPostProcess
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTimerTick
 </UL>
@@ -2817,7 +2817,8 @@ Global Symbols
 <P><STRONG><a name="[28a]"></a>osMessageQueueGet</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, rtx_msgqueue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = osMessageQueueGet &rArr; EvrRtxMessageQueueGet &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
 <LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueueGet
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueNotRetrieved
@@ -2825,7 +2826,6 @@ Global Symbols
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueGet
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueError
 <LI><a href="#[277]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxPostProcess
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxTimerThread
 </UL>
@@ -3435,28 +3435,28 @@ Global Symbols
 <P><STRONG><a name="[162]"></a>osTimerNew</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = osTimerNew &rArr; EvrRtxTimerNew &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
-<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerNew
+<BR>[Calls]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerNew
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
+<LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
 </UL>
 <BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetTimers
 <LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_timer_create
 </UL>
 
 <P><STRONG><a name="[2d8]"></a>osTimerGetName</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, rtx_timer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<BR><BR>[Calls]<UL><LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerGetName
+<LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
-<LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerGetName
 </UL>
 
 <P><STRONG><a name="[15b]"></a>osTimerStart</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = osTimerStart &rArr; EvrRtxTimerStart &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
-<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
-<LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStart
+<BR>[Calls]<UL><LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStart
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
+<LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Callback_6s
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Callback_3m
@@ -3467,25 +3467,25 @@ Global Symbols
 <P><STRONG><a name="[160]"></a>osTimerStop</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = osTimerStop &rArr; EvrRtxTimerStop &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
-<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
-<LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStop
+<BR>[Calls]<UL><LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStop
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
+<LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Callback_1s
 </UL>
 
 <P><STRONG><a name="[2d9]"></a>osTimerIsRunning</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, rtx_timer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<BR><BR>[Calls]<UL><LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerIsRunning
+<LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
 <LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
-<LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerIsRunning
 </UL>
 
 <P><STRONG><a name="[2da]"></a>osTimerDelete</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, rtx_timer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
-<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
-<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerDelete
+<BR><BR>[Calls]<UL><LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerDelete
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
+<LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsIrqMasked
+<LI><a href="#[2d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IsException
 </UL>
 <BR>[Called By]<UL><LI><a href="#[359]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_timer_delete
 </UL>
@@ -3560,8 +3560,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2ff]"></a>EventRecorderTimerGetFreq</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, eventrecorder.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
-<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<BR><BR>[Called By]<UL><LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
 </UL>
 
 <P><STRONG><a name="[2fb]"></a>EventRecorderStart</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, eventrecorder.o(.text))
@@ -3583,14 +3583,14 @@ Global Symbols
 <P><STRONG><a name="[266]"></a>EventRecorderInitialize</STRONG> (Thumb, 228 bytes, Stack size 24 bytes, eventrecorder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = EventRecorderInitialize &rArr; EventRecorderStart &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetFreq
+<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[2ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerGetFreq
 <LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderTimerSetup
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderEnable
 <LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
 <LI><a href="#[2fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crc16_ccitt
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxKernelPreInit
 </UL>
@@ -3615,13 +3615,31 @@ Global Symbols
 <P><STRONG><a name="[1a8]"></a>EventRecordData</STRONG> (Thumb, 298 bytes, Stack size 40 bytes, eventrecorder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[303]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc8
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[303]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc8
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventCheckFilter
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_SetPassword
+<LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
+<LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_send_message
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_auth_basic_parse
+<LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
+<LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_parse_header
+<LI><a href="#[3b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_open_file
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
+<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
+<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
+<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
+<LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
+<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxKernelInfoRetrieved
 <LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
 <LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
@@ -3642,24 +3660,6 @@ Global Symbols
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_init
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_run
-<LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
-<LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_send_message
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_auth_basic_parse
-<LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
-<LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_parse_header
-<LI><a href="#[3b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_open_file
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
-<LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
-<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
-<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
-<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
-<LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
-<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
-<LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
 </UL>
 
 <P><STRONG><a name="[cb]"></a>EventRecord2</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, eventrecorder.o(.text))
@@ -3677,6 +3677,51 @@ Global Symbols
 <LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netIF_SetOption
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netIF_GetOption
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netInitialize
+<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_listener
+<LI><a href="#[3a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
+<LI><a href="#[3b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_open_file
+<LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
+<LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
+<LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_set_option
+<LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
+<LI><a href="#[441]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_get_buf
+<LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
+<LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
+<LI><a href="#[3a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_22
+<LI><a href="#[39d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_15
+<LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_14
+<LI><a href="#[3bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_8
+<LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
+<LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[46f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_set_cwnd
+<LI><a href="#[474]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_parse_opt
+<LI><a href="#[46d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_reset
+<LI><a href="#[47d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_que_resend
+<LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_data
+<LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_ctrl
+<LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
+<LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_open
+<LI><a href="#[3fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_buf
+<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[381]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
+<LI><a href="#[458]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_init
+<LI><a href="#[455]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_init
+<LI><a href="#[37e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
+<LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
+<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
+<LI><a href="#[386]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueDestroyed
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueDelete
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueResetDone
@@ -3859,51 +3904,6 @@ Global Symbols
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_init
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_run
-<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
-<LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_listener
-<LI><a href="#[3a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
-<LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
-<LI><a href="#[3b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_open_file
-<LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
-<LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
-<LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_set_option
-<LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
-<LI><a href="#[441]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_get_buf
-<LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
-<LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
-<LI><a href="#[3a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_22
-<LI><a href="#[39d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_15
-<LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_14
-<LI><a href="#[3bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_8
-<LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
-<LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
-<LI><a href="#[46f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_set_cwnd
-<LI><a href="#[474]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_parse_opt
-<LI><a href="#[46d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_reset
-<LI><a href="#[47d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_que_resend
-<LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_data
-<LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_ctrl
-<LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
-<LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_open
-<LI><a href="#[3fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_buf
-<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
-<LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
-<LI><a href="#[381]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
-<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
-<LI><a href="#[458]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_init
-<LI><a href="#[455]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_init
-<LI><a href="#[37e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
-<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
-<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
-<LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
-<LI><a href="#[386]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_tcp.o(.text.net_tcp_process)
 </UL>
@@ -3915,7 +3915,8 @@ Global Symbols
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventGetTS
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordItem
 </UL>
-<BR>[Called By]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueGetPending
+<BR>[Called By]<UL><LI><a href="#[409]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_init
+<LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueGetPending
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueGet
 <LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueuePutPending
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueuePut
@@ -3940,7 +3941,6 @@ Global Symbols
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxEventFlagsWait
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[409]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_init
 </UL>
 
 <P><STRONG><a name="[304]"></a>HAL_InitTick</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text))
@@ -5021,8 +5021,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexAcquire
 </UL>
-<BR>[Called By]<UL><LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
-<LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_lock
+<BR>[Called By]<UL><LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_lock
+<LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
 </UL>
 
 <P><STRONG><a name="[35f]"></a>netos_unlock</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, net_config.o(.text))
@@ -5030,8 +5030,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
-<LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
+<BR>[Called By]<UL><LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
+<LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
 </UL>
 
 <P><STRONG><a name="[360]"></a>netos_flag_wait</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, net_config.o(.text))
@@ -5125,8 +5125,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3db]"></a>netHTTPs_fclose</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, net_config.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_kill_session
+<BR><BR>[Called By]<UL><LI><a href="#[3da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_kill_session
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[445]"></a>netHTTPs_fread</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, net_config.o(.text))
@@ -5184,7 +5184,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[24b]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<BR><BR>[Called By]<UL><LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
+<LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
+<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
+<LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_get
+<LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_add
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
+<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[3b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
+<LI><a href="#[3ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
+<LI><a href="#[3a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
+<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
+<LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 <LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueReset
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueGet
@@ -5201,20 +5215,6 @@ Global Symbols
 <LI><a href="#[37b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_send_frame
-<LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
-<LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
-<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
-<LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_get
-<LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_add
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
-<LI><a href="#[3b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
-<LI><a href="#[3ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
-<LI><a href="#[3a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
-<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
 </UL>
 
 <P><STRONG><a name="[188]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
@@ -5235,24 +5235,24 @@ Global Symbols
 <P><STRONG><a name="[26f]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[36e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
+<BR>[Called By]<UL><LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_send_message
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMessageQueueNew
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;svcRtxMemoryPoolNew
-<LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_send_message
 </UL>
 
 <P><STRONG><a name="[13f]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_LSE
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC1_pins_F429ZI_config
+<LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
+<LI><a href="#[38d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 <LI><a href="#[2e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Control
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initialize
-<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_socket_init
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_init
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_init
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_init
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_init
-<LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
-<LI><a href="#[38d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 </UL>
 
 <P><STRONG><a name="[515]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -5269,9 +5269,9 @@ Global Symbols
 
 <P><STRONG><a name="[139]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_LCD
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_init
 <LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
 <LI><a href="#[3b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_open_file
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_init
 </UL>
 
 <P><STRONG><a name="[175]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
@@ -5284,11 +5284,11 @@ Global Symbols
 <P><STRONG><a name="[3f9]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = memcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
+<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 <LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
 <LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 </UL>
 
 <P><STRONG><a name="[179]"></a>strcpy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, strcpy.o(.text))
@@ -5462,8 +5462,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3d6]"></a>netCGI_CustomHeader</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, net_http_server.o(.text.netCGI_CustomHeader))
-<BR><BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
+<BR><BR>[Called By]<UL><LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[171]"></a>netCGI_GetEnvVar</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, net_http_server.o(.text.netCGI_GetEnvVar))
@@ -5553,11 +5553,11 @@ Global Symbols
 <P><STRONG><a name="[17a]"></a>netHTTPs_SetPassword</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, net_http_server.o(.text.netHTTPs_SetPassword))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = netHTTPs_SetPassword &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcpy
+<LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcpy
-<LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
 </UL>
 <BR>[Called By]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_ProcessData
 </UL>
@@ -5565,10 +5565,10 @@ Global Symbols
 <P><STRONG><a name="[17d]"></a>netIF_GetOption</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, net_sys.o(.text.netIF_GetOption))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = netIF_GetOption &rArr; net_sys_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[407]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_if_map_all
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
-<LI><a href="#[407]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_if_map_all
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_Script
 </UL>
@@ -5576,10 +5576,10 @@ Global Symbols
 <P><STRONG><a name="[173]"></a>netIF_SetOption</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, net_sys.o(.text.netIF_SetOption))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = netIF_SetOption &rArr; net_sys_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[407]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_if_map_all
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
-<LI><a href="#[407]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_if_map_all
 </UL>
 <BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_ProcessQuery
 </UL>
@@ -5603,9 +5603,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[16d]"></a>netInitialize</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, net_sys.o(.text.netInitialize))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = netInitialize &rArr; netos_timer_create &rArr; osTimerNew &rArr; EvrRtxTimerNew &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = netInitialize &rArr; net_mem_init &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[409]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_init
+<LI><a href="#[386]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
 <LI><a href="#[36a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_evr_init
@@ -5614,8 +5616,6 @@ Global Symbols
 <LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_timer_create
 <LI><a href="#[354]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_thread_create
 <LI><a href="#[353]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_init
-<LI><a href="#[409]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_init
-<LI><a href="#[386]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_main
 </UL>
@@ -5629,11 +5629,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[18a]"></a>netSNTPc_GetTime</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, net_sntp_client_core.o(.text.netSNTPc_GetTime))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = netSNTPc_GetTime &rArr; net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
+<BR>[Calls]<UL><LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<LI><a href="#[3ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_unlock
 <LI><a href="#[390]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_lock
-<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_time
 </UL>
@@ -5672,8 +5672,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_atoi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netIP_aton
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_init
 <LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_init
 </UL>
 
 <P><STRONG><a name="[439]"></a>net_addr4_to_mac</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr4_to_mac))
@@ -5692,29 +5692,29 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[38b]"></a>net_addr6_comp</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr6_comp))
-<BR><BR>[Called By]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[430]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_refresh
-<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
-<LI><a href="#[3aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr_comp
+<BR><BR>[Called By]<UL><LI><a href="#[3aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr_comp
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 <LI><a href="#[39b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
 <LI><a href="#[3b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_6
 <LI><a href="#[414]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_find_route
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[430]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_refresh
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
+<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
 </UL>
 
 <P><STRONG><a name="[3fe]"></a>net_addr6_copy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr6_copy))
-<BR><BR>[Called By]<UL><LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
-<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_set_option
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_get_option
-<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<BR><BR>[Called By]<UL><LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
 <LI><a href="#[400]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_router_remove
 <LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
 <LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
 <LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
+<LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_set_option
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_get_option
 </UL>
 
 <P><STRONG><a name="[3c0]"></a>net_addr6_create</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, net_addr.o(.text.net_addr6_create))
@@ -5724,13 +5724,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[449]"></a>net_addr6_get_solicited</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr6_get_solicited))
-<BR><BR>[Called By]<UL><LI><a href="#[429]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_collect_mcast
-<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<BR><BR>[Called By]<UL><LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[429]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_collect_mcast
 </UL>
 
 <P><STRONG><a name="[461]"></a>net_addr6_is_linklocal</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr6_is_linklocal))
-<BR><BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<BR><BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 </UL>
 
 <P><STRONG><a name="[460]"></a>net_addr6_is_onlink</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, net_addr.o(.text.net_addr6_is_onlink))
@@ -5744,12 +5744,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[418]"></a>net_addr6_is_unspec</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr6_is_unspec))
-<BR><BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[429]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_collect_mcast
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_send_frame
-<LI><a href="#[417]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr_is_unspec
+<BR><BR>[Called By]<UL><LI><a href="#[417]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr_is_unspec
 <LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 <LI><a href="#[404]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_get_local
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
+<LI><a href="#[429]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_collect_mcast
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_send_frame
 </UL>
 
 <P><STRONG><a name="[43a]"></a>net_addr6_to_mac</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, net_addr.o(.text.net_addr6_to_mac))
@@ -5794,7 +5794,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[419]"></a>net_arp_cache_add</STRONG> (Thumb, 248 bytes, Stack size 24 bytes, net_arp.o(.text.net_arp_cache_add))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = net_arp_cache_add &rArr; arp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = net_arp_cache_add &rArr; arp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -5808,7 +5808,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[41d]"></a>net_arp_cache_early</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, net_arp.o(.text.net_arp_cache_early))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_arp_cache_early &rArr; arp_send_request &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_arp_cache_early &rArr; arp_send_request &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -5822,7 +5822,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[41e]"></a>net_arp_cache_find</STRONG> (Thumb, 220 bytes, Stack size 32 bytes, net_arp.o(.text.net_arp_cache_find))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_arp_cache_find &rArr; arp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_arp_cache_find &rArr; arp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[41b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_is_onlink
@@ -5835,13 +5835,13 @@ Global Symbols
 <P><STRONG><a name="[fa]"></a>net_arp_cache_init</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, net_arp.o(.text.net_arp_cache_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = net_arp_cache_init &rArr; OUTLINED_FUNCTION_3 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[3a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[105]"></a>net_arp_cache_run</STRONG> (Thumb, 480 bytes, Stack size 40 bytes, net_arp.o(.text.net_arp_cache_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = net_arp_cache_run &rArr; arp_send_request &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = net_arp_cache_run &rArr; arp_send_request &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -5854,19 +5854,19 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[421]"></a>net_arp_enqueue</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, net_arp.o(.text.net_arp_enqueue))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_arp_enqueue &rArr; arp_send_request &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_arp_enqueue &rArr; arp_send_request &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_avail
 <LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_send_frame
 </UL>
 
 <P><STRONG><a name="[422]"></a>net_arp_notify</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, net_arp.o(.text.net_arp_notify))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = net_arp_notify &rArr; arp_send_request &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = net_arp_notify &rArr; arp_send_request &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
 </UL>
@@ -5875,7 +5875,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[423]"></a>net_arp_process</STRONG> (Thumb, 540 bytes, Stack size 24 bytes, net_arp.o(.text.net_arp_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_arp_process &rArr; arp_proc_response &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_arp_process &rArr; arp_proc_response &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -5892,9 +5892,9 @@ Global Symbols
 <P><STRONG><a name="[c7]"></a>net_atoi</STRONG> (Thumb, 68 bytes, Stack size 20 bytes, net_common.o(.text.net_atoi))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = net_atoi
 </UL>
-<BR>[Called By]<UL><LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr4_aton
-<LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
+<BR>[Called By]<UL><LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_parse_header
+<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr4_aton
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_http_server.o(.text.http_parse_header)
 </UL>
@@ -5907,10 +5907,10 @@ Global Symbols
 <P><STRONG><a name="[3f3]"></a>net_chksum_buf</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, net_common.o(.text.net_chksum_buf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = net_chksum_buf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum_buf
-<LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
+<BR>[Called By]<UL><LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum
 <LI><a href="#[3f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_chksum
+<LI><a href="#[3f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum_buf
 </UL>
 
 <P><STRONG><a name="[425]"></a>net_crc_buf</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, net_common.o(.text.net_crc_buf))
@@ -5931,7 +5931,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f6]"></a>net_eth_config_mcast</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, net_eth.o(.text.net_eth_config_mcast))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_eth_config_mcast &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_eth_config_mcast &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
@@ -5959,7 +5959,8 @@ Global Symbols
 <P><STRONG><a name="[f8]"></a>net_eth_iface_init</STRONG> (Thumb, 828 bytes, Stack size 40 bytes, net_eth.o(.text.net_eth_iface_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_eth_iface_init &rArr; netif_create &rArr; osThreadNew &rArr; EvrRtxThreadNew &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[425]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_crc_buf
 <LI><a href="#[408]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_aton
@@ -5971,12 +5972,11 @@ Global Symbols
 <LI><a href="#[42b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
 <LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netif_create
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[103]"></a>net_eth_iface_run</STRONG> (Thumb, 720 bytes, Stack size 40 bytes, net_eth.o(.text.net_eth_iface_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = net_eth_iface_run &rArr; net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = net_eth_iface_run &rArr; net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -6018,9 +6018,10 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[f5]"></a>net_eth_send_frame</STRONG> (Thumb, 440 bytes, Stack size 32 bytes, net_eth.o(.text.net_eth_send_frame))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = net_eth_send_frame &rArr; net_ndp_enqueue &rArr; ndp_send_request &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = net_eth_send_frame &rArr; net_ndp_enqueue &rArr; ndp_send_request &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[43c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_enqueue
 <LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
@@ -6033,12 +6034,11 @@ Global Symbols
 <LI><a href="#[3ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_4
 <LI><a href="#[427]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eth_if_map
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_output
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[10d]"></a>net_eth_set_option</STRONG> (Thumb, 652 bytes, Stack size 24 bytes, net_eth.o(.text.net_eth_set_option))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_eth_set_option &rArr; net_arp_notify &rArr; arp_send_request &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_eth_set_option &rArr; net_arp_notify &rArr; arp_send_request &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -6057,15 +6057,15 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[100]"></a>net_http_server_init</STRONG> (Thumb, 248 bytes, Stack size 40 bytes, net_http_server.o(.text.net_http_server_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = net_http_server_init &rArr; http_server_start &rArr; net_tcp_set_option &rArr; EventRecord2 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = net_http_server_init &rArr; http_server_start &rArr; net_tcp_set_option &rArr; OUTLINED_FUNCTION_0 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
-<LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
+<BR>[Calls]<UL><LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
 <LI><a href="#[43f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_get_socket
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
@@ -6073,9 +6073,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = net_http_server_run &rArr; netCGI_Script &rArr; AD_in &rArr; ADC_getVoltage &rArr; HAL_ADC_PollForConversion &rArr; HAL_GetTick &rArr; osKernelGetTickCount &rArr; svcRtxKernelGetTickCount &rArr; EvrRtxKernelGetTickCount &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_Script
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[445]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fread
-<LI><a href="#[3db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fclose
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcpy
 <LI><a href="#[3d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_CustomHeader
 <LI><a href="#[395]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_10
@@ -6096,6 +6093,9 @@ Global Symbols
 <LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
 <LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_abort
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[445]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fread
+<LI><a href="#[3db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fclose
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
@@ -6104,32 +6104,32 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[432]"></a>net_icmp6_process</STRONG> (Thumb, 544 bytes, Stack size 48 bytes, net_icmp6.o(.text.net_icmp6_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
+<BR>[Calls]<UL><LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
 <LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
 <LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
 <LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
 </UL>
 
 <P><STRONG><a name="[402]"></a>net_icmp6_send</STRONG> (Thumb, 120 bytes, Stack size 40 bytes, net_icmp6.o(.text.net_icmp6_send))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[44a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_tx_offl_hl
+<BR>[Calls]<UL><LI><a href="#[44a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_tx_offl_hl
 <LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
 <LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
 <LI><a href="#[449]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_get_solicited
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
 <LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
@@ -6137,12 +6137,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[44b]"></a>net_icmp6_send_echo</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, net_icmp6.o(.text.net_icmp6_send_echo))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = net_icmp6_send_echo &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = net_icmp6_send_echo &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[466]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ping_send_req
 </UL>
@@ -6152,32 +6152,32 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[435]"></a>net_icmp_process</STRONG> (Thumb, 428 bytes, Stack size 40 bytes, net_icmp.o(.text.net_icmp_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = net_icmp_process &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = net_icmp_process &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
 <LI><a href="#[3f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum_buf
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
 </UL>
 
 <P><STRONG><a name="[44c]"></a>net_icmp_send_echo</STRONG> (Thumb, 148 bytes, Stack size 40 bytes, net_icmp.o(.text.net_icmp_send_echo))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = net_icmp_send_echo &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = net_icmp_send_echo &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[44d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_tx_offl_hl
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
 <LI><a href="#[3f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum_buf
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[44d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_tx_offl_hl
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[466]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ping_send_req
 </UL>
@@ -6205,7 +6205,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[108]"></a>net_igmp_host_run</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, net_igmp.o(.text.net_igmp_host_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = net_igmp_host_run &rArr; igmp_send_report &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = net_igmp_host_run &rArr; igmp_send_report &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
@@ -6235,12 +6235,12 @@ Global Symbols
 <P><STRONG><a name="[42e]"></a>net_ip4_chk_frame</STRONG> (Thumb, 416 bytes, Stack size 40 bytes, net_ip4.o(.text.net_ip4_chk_frame))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = net_ip4_chk_frame &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[451]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_mtu
+<LI><a href="#[3f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_chksum
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[44f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_igmp_is_member
 <LI><a href="#[43d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_is_subcast
-<LI><a href="#[451]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_mtu
-<LI><a href="#[3f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_chksum
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
@@ -6251,10 +6251,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_chksum_buf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
-<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<BR>[Called By]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
+<LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
 </UL>
 
 <P><STRONG><a name="[3f0]"></a>net_ip4_chksum_buf</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_ip4.o(.text.net_ip4_chksum_buf))
@@ -6262,10 +6262,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_chksum_buf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
+<BR>[Called By]<UL><LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
+<LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
 <LI><a href="#[437]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_igmp_process
 <LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
-<LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
 </UL>
 
 <P><STRONG><a name="[413]"></a>net_ip4_find_route</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, net_ip4.o(.text.net_ip4_find_route))
@@ -6277,25 +6277,25 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[453]"></a>net_ip4_frag_add</STRONG> (Thumb, 432 bytes, Stack size 32 bytes, net_ip4_frag.o(.text.net_ip4_frag_add))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_ip4_frag_add &rArr; OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_ip4_frag_add &rArr; OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[37f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<BR>[Calls]<UL><LI><a href="#[37f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[434]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_reass_frame
 </UL>
 
 <P><STRONG><a name="[454]"></a>net_ip4_frag_get</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, net_ip4_frag.o(.text.net_ip4_frag_get))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
-<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<BR>[Called By]<UL><LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
 </UL>
 
 <P><STRONG><a name="[fb]"></a>net_ip4_frag_init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, net_ip4_frag.o(.text.net_ip4_frag_init))
@@ -6306,7 +6306,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[106]"></a>net_ip4_frag_run</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, net_ip4_frag.o(.text.net_ip4_frag_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = net_ip4_frag_run &rArr; OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = net_ip4_frag_run &rArr; OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[37f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 </UL>
@@ -6326,10 +6326,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[41b]"></a>net_ip4_is_onlink</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, net_ip4.o(.text.net_ip4_is_onlink))
-<BR><BR>[Called By]<UL><LI><a href="#[41e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_find
+<BR><BR>[Called By]<UL><LI><a href="#[413]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_find_route
+<LI><a href="#[41e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_find
 <LI><a href="#[41d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_early
 <LI><a href="#[419]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_add
-<LI><a href="#[413]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_find_route
 </UL>
 
 <P><STRONG><a name="[43d]"></a>net_ip4_is_subcast</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, net_ip4.o(.text.net_ip4_is_subcast))
@@ -6338,7 +6338,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[434]"></a>net_ip4_reass_frame</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, net_ip4.o(.text.net_ip4_reass_frame))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_ip4_reass_frame &rArr; net_ip4_frag_add &rArr; OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_ip4_reass_frame &rArr; net_ip4_frag_add &rArr; OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_add
 </UL>
@@ -6346,19 +6346,19 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3f1]"></a>net_ip4_send_frame</STRONG> (Thumb, 368 bytes, Stack size 32 bytes, net_ip4.o(.text.net_ip4_send_frame))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_get
+<BR>[Calls]<UL><LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_get
 <LI><a href="#[451]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_mtu
 <LI><a href="#[3f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip4_get_chksum
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
-<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<BR>[Called By]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
 <LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
+<LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
+<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
 </UL>
 
 <P><STRONG><a name="[44d]"></a>net_ip4_tx_offl_hl</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, net_ip4.o(.text.net_ip4_tx_offl_hl))
@@ -6372,12 +6372,12 @@ Global Symbols
 <P><STRONG><a name="[42f]"></a>net_ip6_chk_frame</STRONG> (Thumb, 276 bytes, Stack size 24 bytes, net_ip6.o(.text.net_ip6_chk_frame))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = net_ip6_chk_frame &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[457]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip6_get_mtu
 <LI><a href="#[456]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_solicited
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
@@ -6388,20 +6388,20 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_chksum_buf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
-<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<BR>[Called By]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
 <LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
 </UL>
 
 <P><STRONG><a name="[429]"></a>net_ip6_collect_mcast</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, net_ip6.o(.text.net_ip6_collect_mcast))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = net_ip6_collect_mcast
 </UL>
-<BR>[Calls]<UL><LI><a href="#[43a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_to_mac
+<BR>[Calls]<UL><LI><a href="#[449]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_get_solicited
+<LI><a href="#[43a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_to_mac
 <LI><a href="#[418]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_unspec
-<LI><a href="#[449]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_get_solicited
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_config_mcast
 </UL>
@@ -6438,19 +6438,19 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[448]"></a>net_ip6_send_frame</STRONG> (Thumb, 272 bytes, Stack size 32 bytes, net_ip6.o(.text.net_ip6_send_frame))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_get
+<LI><a href="#[457]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip6_get_mtu
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
 <LI><a href="#[45a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_frag_get
-<LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_get
-<LI><a href="#[457]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip6_get_mtu
 </UL>
-<BR>[Called By]<UL><LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<BR>[Called By]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
 <LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
 </UL>
 
 <P><STRONG><a name="[44a]"></a>net_ip6_tx_offl_hl</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, net_ip6.o(.text.net_ip6_tx_offl_hl))
@@ -6487,7 +6487,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[104]"></a>net_loop_iface_run</STRONG> (Thumb, 168 bytes, Stack size 8 bytes, net_loopback.o(.text.net_loop_iface_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = net_loop_iface_run &rArr; net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = net_loop_iface_run &rArr; net_icmp6_process &rArr; net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[436]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_process
@@ -6503,31 +6503,22 @@ Global Symbols
 <P><STRONG><a name="[114]"></a>net_loop_send_frame</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, net_loopback.o(.text.net_loop_send_frame))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_loop_send_frame &rArr; net_sys_wakeup &rArr; netos_flag_set &rArr; osThreadFlagsSet &rArr; osRtxPostProcess &rArr; osRtxKernelErrorNotify &rArr; EvrRtxKernelErrorNotify &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[406]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_wakeup
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_loopback.o(.rodata.net_loop_if_config)
 </UL>
 <P><STRONG><a name="[3c8]"></a>net_mem_alloc</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, net_mem.o(.text.net_mem_alloc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_mem_alloc &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_mem_alloc &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
-<LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
+<BR>[Calls]<UL><LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
 <LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_lock
+<LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
-<LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
-<LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_reply
-<LI><a href="#[43c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_enqueue
-<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
-<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
-<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_enqueue
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_config_mcast
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netETH_Thread
-<LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
+<BR>[Called By]<UL><LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
 <LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
 <LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
@@ -6542,36 +6533,34 @@ Global Symbols
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
 <LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
 <LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
+<LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
+<LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
+<LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_reply
+<LI><a href="#[43c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_enqueue
+<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
+<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
+<LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_enqueue
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_config_mcast
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netETH_Thread
 </UL>
 
 <P><STRONG><a name="[396]"></a>net_mem_avail</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, net_mem.o(.text.net_mem_avail))
-<BR><BR>[Called By]<UL><LI><a href="#[43c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_enqueue
+<BR><BR>[Called By]<UL><LI><a href="#[395]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_10
+<LI><a href="#[43c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_enqueue
 <LI><a href="#[421]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_enqueue
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
-<LI><a href="#[395]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_10
 </UL>
 
 <P><STRONG><a name="[3c5]"></a>net_mem_free</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, net_mem.o(.text.net_mem_free))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
+<BR>[Calls]<UL><LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
+<LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_lock
+<LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
-<LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
-<LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_lock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
-<LI><a href="#[3c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_que_free
-<LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
-<LI><a href="#[3c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_proc_response
-<LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_reply
-<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
-<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_config_mcast
-<LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
+<BR>[Called By]<UL><LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
 <LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
 <LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
 <LI><a href="#[3da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_kill_session
@@ -6589,6 +6578,17 @@ Global Symbols
 <LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
 <LI><a href="#[3ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_que_free
 <LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
+<LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;igmp_send_report
+<LI><a href="#[3c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_que_free
+<LI><a href="#[3c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_request
+<LI><a href="#[3c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_proc_response
+<LI><a href="#[3c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arp_send_reply
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_process
+<LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_config_mcast
 </UL>
 
 <P><STRONG><a name="[409]"></a>net_mem_init</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, net_mem.o(.text.net_mem_init))
@@ -6603,32 +6603,28 @@ Global Symbols
 <P><STRONG><a name="[45d]"></a>net_mem_shrink</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, net_mem.o(.text.net_mem_shrink))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = net_mem_shrink &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
+<BR>[Calls]<UL><LI><a href="#[3f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_unlock
 <LI><a href="#[3f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mem_lock
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[443]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_send
 </UL>
 
 <P><STRONG><a name="[101]"></a>net_nbns_client_init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, net_nbns_client.o(.text.net_nbns_client_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_nbns_client_init &rArr; net_udp_open &rArr; EventRecord2 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_nbns_client_init &rArr; net_udp_open &rArr; OUTLINED_FUNCTION_1 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
-<LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<BR>[Calls]<UL><LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_open
 <LI><a href="#[45e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_socket
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[43b]"></a>net_ndp_cache_find</STRONG> (Thumb, 404 bytes, Stack size 32 bytes, net_ndp.o(.text.net_ndp_cache_find))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_ndp_cache_find &rArr; ndp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = net_ndp_cache_find &rArr; ndp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[418]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_unspec
-<LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
-<LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
+<BR>[Calls]<UL><LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
 <LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 <LI><a href="#[3ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
 <LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
@@ -6637,6 +6633,10 @@ Global Symbols
 <LI><a href="#[3fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_alloc
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_onlink
 <LI><a href="#[461]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_linklocal
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[418]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_unspec
+<LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_send_frame
 </UL>
@@ -6652,26 +6652,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[43c]"></a>net_ndp_enqueue</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, net_ndp.o(.text.net_ndp_enqueue))
-<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = net_ndp_enqueue &rArr; ndp_send_request &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = net_ndp_enqueue &rArr; ndp_send_request &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_avail
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[403]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_request
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_send_frame
 </UL>
 
 <P><STRONG><a name="[447]"></a>net_ndp_process</STRONG> (Thumb, 1560 bytes, Stack size 56 bytes, net_ndp.o(.text.net_ndp_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = net_ndp_process &rArr; ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[420]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_resume
-<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[418]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_unspec
-<LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
+<BR>[Calls]<UL><LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
 <LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[39b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
@@ -6690,6 +6685,11 @@ Global Symbols
 <LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
 <LI><a href="#[462]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_check_frame
 <LI><a href="#[461]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_linklocal
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[420]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_resume
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[418]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_is_unspec
 </UL>
 <BR>[Called By]<UL><LI><a href="#[432]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_process
 </UL>
@@ -6711,10 +6711,10 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[107]"></a>net_ping_client_run</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, net_ping_core.o(.text.net_ping_client_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = net_ping_client_run &rArr; ping_send_req &rArr; net_icmp6_send_echo &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = net_ping_client_run &rArr; ping_send_req &rArr; net_icmp6_send_echo &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[466]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ping_send_req
+<BR>[Calls]<UL><LI><a href="#[466]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ping_send_req
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
@@ -6726,15 +6726,15 @@ Global Symbols
 <P><STRONG><a name="[102]"></a>net_sntp_client_init</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, net_sntp_client_core.o(.text.net_sntp_client_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_sntp_client_init &rArr; net_udp_get_socket &rArr; OUTLINED_FUNCTION_1 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
-<LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<BR>[Calls]<UL><LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[45e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_socket
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[10b]"></a>net_sntp_client_run</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, net_sntp_client_core.o(.text.net_sntp_client_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = net_sntp_client_run &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = net_sntp_client_run &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[468]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_stop
@@ -6743,10 +6743,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[40b]"></a>net_sntp_client_start</STRONG> (Thumb, 280 bytes, Stack size 24 bytes, net_sntp_client_core.o(.text.net_sntp_client_start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = net_sntp_client_start &rArr; sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
+<BR>[Calls]<UL><LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_send_message
@@ -6754,6 +6753,7 @@ Global Symbols
 <LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_open
 <LI><a href="#[46a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_close
 <LI><a href="#[417]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr_is_unspec
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netSNTPc_GetTime
 </UL>
@@ -6786,11 +6786,11 @@ Global Symbols
 
 <P><STRONG><a name="[c5]"></a>net_strcpy</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, net_common.o(.text.net_strcpy))
 <BR><BR>[Called By]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_SetPassword
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 <LI><a href="#[3e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_path
 <LI><a href="#[384]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
 <LI><a href="#[3f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip6_ntoa
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 <BR>[Address Reference Count : 4]<UL><LI> net_http_server.o(.text.net_http_server_run)
 <LI> net_http_server.o(.text.http_add_header)
@@ -6838,8 +6838,8 @@ Global Symbols
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netIF_GetOption
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_SetPassword
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netInitialize
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCore_Thread
 <LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCore_Thread
 </UL>
 
 <P><STRONG><a name="[420]"></a>net_sys_resume</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, net_sys.o(.text.net_sys_resume))
@@ -6847,9 +6847,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_flag_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[423]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_process
+<BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[423]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_process
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_arp_cache_run
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 </UL>
 
 <P><STRONG><a name="[c3]"></a>net_sys_tick</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, net_sys.o(.text.net_sys_tick))
@@ -6869,8 +6869,8 @@ Global Symbols
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netIF_GetOption
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_SetPassword
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netInitialize
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCore_Thread
 <LI><a href="#[3ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_4
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCore_Thread
 </UL>
 
 <P><STRONG><a name="[406]"></a>net_sys_wakeup</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, net_sys.o(.text.net_sys_wakeup))
@@ -6878,13 +6878,13 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_flag_set
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_tick
+<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_tick
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netETH_Thread
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_send_frame
 </UL>
 
 <P><STRONG><a name="[442]"></a>net_tcp_abort</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, net_tcp.o(.text.net_tcp_abort))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = net_tcp_abort &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = net_tcp_abort &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
@@ -6895,19 +6895,19 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[444]"></a>net_tcp_close</STRONG> (Thumb, 252 bytes, Stack size 32 bytes, net_tcp.o(.text.net_tcp_close))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = net_tcp_close &rArr; OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = net_tcp_close &rArr; OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
+<BR>[Calls]<UL><LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
 <LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[46b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_transit
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[441]"></a>net_tcp_get_buf</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, net_tcp.o(.text.net_tcp_get_buf))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_tcp_get_buf &rArr; net_mem_alloc &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_tcp_get_buf &rArr; net_mem_alloc &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
@@ -6951,27 +6951,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3e9]"></a>net_tcp_listen</STRONG> (Thumb, 164 bytes, Stack size 24 bytes, net_tcp.o(.text.net_tcp_listen))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = net_tcp_listen &rArr; EventRecord2 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = net_tcp_listen &rArr; OUTLINED_FUNCTION_2 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
+<BR>[Calls]<UL><LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
+<BR>[Called By]<UL><LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[438]"></a>net_tcp_process</STRONG> (Thumb, 2872 bytes, Stack size 56 bytes, net_tcp.o(.text.net_tcp_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = net_tcp_process &rArr; tcp_send_reset &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = net_tcp_process &rArr; tcp_send_reset &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_rand32
-<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
-<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
-<LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
+<BR>[Calls]<UL><LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_comp
 <LI><a href="#[476]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_20
 <LI><a href="#[46e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_18
 <LI><a href="#[475]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_17
@@ -6992,30 +6986,36 @@ Global Symbols
 <LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_ctrl
 <LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_rand32
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
+<LI><a href="#[369]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sys_error
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
 </UL>
 
 <P><STRONG><a name="[443]"></a>net_tcp_send</STRONG> (Thumb, 360 bytes, Stack size 40 bytes, net_tcp.o(.text.net_tcp_send))
-<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = net_tcp_send &rArr; tcp_send_data &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = net_tcp_send &rArr; tcp_send_data &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
+<BR>[Calls]<UL><LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
 <LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_14
 <LI><a href="#[478]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
 <LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_data
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3ea]"></a>net_tcp_set_option</STRONG> (Thumb, 304 bytes, Stack size 24 bytes, net_tcp.o(.text.net_tcp_set_option))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = net_tcp_set_option &rArr; EventRecord2 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = net_tcp_set_option &rArr; OUTLINED_FUNCTION_0 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[47a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_13
+<BR>[Calls]<UL><LI><a href="#[47a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_13
 <LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_server_start
 </UL>
@@ -7029,11 +7029,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
 <P><STRONG><a name="[109]"></a>net_tcp_socket_run</STRONG> (Thumb, 1080 bytes, Stack size 48 bytes, net_tcp.o(.text.net_tcp_socket_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = net_tcp_socket_run &rArr; tcp_que_resend &rArr; OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = net_tcp_socket_run &rArr; tcp_que_resend &rArr; OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_avail
-<LI><a href="#[3a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_22
+<BR>[Calls]<UL><LI><a href="#[3a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_22
 <LI><a href="#[47b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_21
 <LI><a href="#[47c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_12
 <LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
@@ -7042,6 +7040,8 @@ Global Symbols
 <LI><a href="#[47d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_que_resend
 <LI><a href="#[46b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_transit
 <LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_ctrl
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_avail
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_config.o(.constdata)
 </UL>
@@ -7056,7 +7056,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3fa]"></a>net_udp_get_buf</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, net_udp.o(.text.net_udp_get_buf))
-<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_udp_get_buf &rArr; net_mem_alloc &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = net_udp_get_buf &rArr; net_mem_alloc &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
@@ -7076,31 +7076,31 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[45f]"></a>net_udp_open</STRONG> (Thumb, 180 bytes, Stack size 40 bytes, net_udp.o(.text.net_udp_open))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_udp_open &rArr; EventRecord2 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = net_udp_open &rArr; OUTLINED_FUNCTION_1 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<BR>[Calls]<UL><LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[47f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;udp_port_in_use
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_nbns_client_init
-<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<BR>[Called By]<UL><LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_nbns_client_init
 </UL>
 
 <P><STRONG><a name="[436]"></a>net_udp_process</STRONG> (Thumb, 360 bytes, Stack size 40 bytes, net_udp.o(.text.net_udp_process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = net_udp_process &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
+<LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
-<LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
-<LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum
 </UL>
 <BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_loop_iface_run
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_eth_iface_run
 </UL>
 
 <P><STRONG><a name="[480]"></a>net_udp_send</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, net_udp.o(.text.net_udp_send))
-<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
 </UL>
@@ -7108,13 +7108,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3fb]"></a>net_udp_send_if</STRONG> (Thumb, 544 bytes, Stack size 56 bytes, net_udp.o(.text.net_udp_send_if))
-<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
-<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[44a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_tx_offl_hl
+<BR>[Calls]<UL><LI><a href="#[44a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_tx_offl_hl
 <LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
 <LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum
@@ -7124,6 +7120,10 @@ Global Symbols
 <LI><a href="#[481]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[381]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[44d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_tx_offl_hl
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nbns_listener
 <LI><a href="#[480]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send
@@ -7157,8 +7157,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[482]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hex2uc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_GetEnvVar
-<LI><a href="#[40a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netMAC_aton
 <LI><a href="#[3bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_uri
+<LI><a href="#[40a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netMAC_aton
 </UL>
 
 <P><STRONG><a name="[410]"></a>net_xtoul</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, net_common.o(.text.net_xtoul))
@@ -7261,7 +7261,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_main
 </UL>
 
-<P><STRONG><a name="[69]"></a>sincroSNTP</STRONG> (Thumb, 88 bytes, Stack size 0 bytes, http_server.o(.text))
+<P><STRONG><a name="[69]"></a>sincroSNTP</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, http_server.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = sincroSNTP &rArr; HAL_RTC_SetTime &rArr; RTC_EnterInitMode &rArr; HAL_GetTick &rArr; osKernelGetTickCount &rArr; svcRtxKernelGetTickCount &rArr; EvrRtxKernelGetTickCount &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
@@ -7375,8 +7375,8 @@ Local Symbols
 <P><STRONG><a name="[6e]"></a>svcRtxKernelGetInfo</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, rtx_kernel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = svcRtxKernelGetInfo &rArr; EvrRtxKernelInfoRetrieved &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxKernelInfoRetrieved
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxKernelInfoRetrieved
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelGetInfo
 </UL>
@@ -7531,14 +7531,14 @@ Local Symbols
 <P><STRONG><a name="[7b]"></a>svcRtxMemoryPoolNew</STRONG> (Thumb, 322 bytes, Stack size 40 bytes, rtx_mempool.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = svcRtxMemoryPoolNew &rArr; osRtxMemoryPoolInit &rArr; EvrRtxMemoryBlockInit &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolInit
+<BR>[Calls]<UL><LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolInit
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryPoolCreated
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMemoryPoolError
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolFree
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryFree
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryAlloc
-<LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_mempool.o(.text)
 </UL>
@@ -7681,7 +7681,8 @@ Local Symbols
 <P><STRONG><a name="[84]"></a>osRtxMessageQueuePostProcess</STRONG> (Thumb, 242 bytes, Stack size 24 bytes, rtx_msgqueue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = osRtxMessageQueuePostProcess &rArr; osRtxMemoryPoolFree &rArr; EvrRtxMemoryBlockFree &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadRegPtr
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadRegPtr
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueueRemove
 <LI><a href="#[27d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueuePut
 <LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueRetrieved
@@ -7690,21 +7691,20 @@ Local Symbols
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListGet
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolFree
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_msgqueue.o(.text)
 </UL>
 <P><STRONG><a name="[85]"></a>svcRtxMessageQueueNew</STRONG> (Thumb, 342 bytes, Stack size 40 bytes, rtx_msgqueue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = svcRtxMessageQueueNew &rArr; osRtxMemoryPoolInit &rArr; EvrRtxMemoryBlockInit &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolInit
+<BR>[Calls]<UL><LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[24a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolInit
 <LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueCreated
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueError
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolFree
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryFree
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryAlloc
-<LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMessageQueueTimerSetup
 </UL>
@@ -7721,6 +7721,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = svcRtxMessageQueuePut &rArr; EvrRtxMessageQueuePutPending &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadWaitEnter
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadRegPtr
 <LI><a href="#[27d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueuePut
 <LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxMessageQueueRetrieved
@@ -7733,7 +7734,6 @@ Local Symbols
 <LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListPut
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListGet
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_msgqueue.o(.text)
 </UL>
@@ -7741,6 +7741,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = svcRtxMessageQueueGet &rArr; osRtxMemoryPoolFree &rArr; EvrRtxMemoryBlockFree &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadWaitEnter
+<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadRegPtr
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueueRemove
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueueGet
@@ -7756,7 +7757,6 @@ Local Symbols
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadListGet
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolFree
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_msgqueue.o(.text)
 </UL>
@@ -7799,7 +7799,8 @@ Local Symbols
 <P><STRONG><a name="[8d]"></a>svcRtxMessageQueueReset</STRONG> (Thumb, 192 bytes, Stack size 32 bytes, rtx_msgqueue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = svcRtxMessageQueueReset &rArr; osRtxMemoryPoolFree &rArr; EvrRtxMemoryBlockFree &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadRegPtr
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadRegPtr
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueueRemove
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueueGet
 <LI><a href="#[27d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MessageQueuePut
@@ -7812,7 +7813,6 @@ Local Symbols
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxThreadDispatch
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolFree
 <LI><a href="#[269]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolAlloc
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_msgqueue.o(.text)
 </UL>
@@ -8438,10 +8438,10 @@ Local Symbols
 <P><STRONG><a name="[b3]"></a>osRtxTimerTick</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = osRtxTimerTick &rArr; osMessageQueuePut &rArr; EvrRtxMessageQueuePut &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerUnlink
-<LI><a href="#[2d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerInsert
-<LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
+<BR>[Calls]<UL><LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
 <LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxKernelErrorNotify
+<LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerUnlink
+<LI><a href="#[2d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerInsert
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_timer.o(.text)
 </UL>
@@ -8465,19 +8465,19 @@ Local Symbols
 <P><STRONG><a name="[b6]"></a>svcRtxTimerStart</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = svcRtxTimerStart &rArr; EvrRtxTimerStarted &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerRemove
-<LI><a href="#[2d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerInsert
-<LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStarted
+<BR>[Calls]<UL><LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStarted
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
+<LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerRemove
+<LI><a href="#[2d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerInsert
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_timer.o(.text)
 </UL>
 <P><STRONG><a name="[b7]"></a>svcRtxTimerStop</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = svcRtxTimerStop &rArr; EvrRtxTimerStopped &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerRemove
-<LI><a href="#[1ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStopped
+<BR>[Calls]<UL><LI><a href="#[1ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerStopped
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
+<LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerRemove
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_timer.o(.text)
 </UL>
@@ -8491,11 +8491,11 @@ Local Symbols
 <P><STRONG><a name="[b9]"></a>svcRtxTimerDelete</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, rtx_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = svcRtxTimerDelete &rArr; osRtxMemoryPoolFree &rArr; EvrRtxMemoryBlockFree &rArr; EventRecord4 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerRemove
-<LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerDestroyed
+<BR>[Calls]<UL><LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerDestroyed
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EvrRtxTimerError
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryPoolFree
 <LI><a href="#[268]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osRtxMemoryFree
+<LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimerRemove
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtx_timer.o(.text)
 </UL>
@@ -8704,8 +8704,8 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = SPI_Initialize &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[2e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[2e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI1_Initialize
 </UL>
@@ -8716,10 +8716,10 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
 <LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort_IT
 <LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_PeripheralReset
 <LI><a href="#[2e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI1_Control
 <LI><a href="#[2e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_PowerControl
@@ -8873,13 +8873,13 @@ Local Symbols
 <LI><a href="#[2f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__LockRecord
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
-<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<BR>[Called By]<UL><LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 <LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
+<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
 </UL>
 
 <P><STRONG><a name="[2f8]"></a>EventGetTS</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, eventrecorder.o(.text))
@@ -8889,13 +8889,13 @@ Local Symbols
 <LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_xch32
 <LI><a href="#[2f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___15_EventRecorder_c_e8d3082c__atomic_inc32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
-<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
-<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
+<BR>[Called By]<UL><LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderInitialize
 <LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord4
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderClockUpdate
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStop
+<LI><a href="#[2fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecorderStart
 </UL>
 
 <P><STRONG><a name="[2fc]"></a>crc16_ccitt</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, eventrecorder.o(.text))
@@ -9101,7 +9101,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3c7]"></a>arp_send_reply</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, net_arp.o(.text.arp_send_reply))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = arp_send_reply &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = arp_send_reply &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -9113,7 +9113,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3c3]"></a>arp_proc_response</STRONG> (Thumb, 224 bytes, Stack size 32 bytes, net_arp.o(.text.arp_proc_response))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = arp_proc_response &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = arp_proc_response &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
@@ -9123,7 +9123,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3c9]"></a>arp_send_request</STRONG> (Thumb, 184 bytes, Stack size 32 bytes, net_arp.o(.text.arp_send_request))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = arp_send_request &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = arp_send_request &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
@@ -9150,7 +9150,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3c6]"></a>arp_que_free</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, net_arp.o(.text.arp_que_free))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = arp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = arp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
@@ -9188,7 +9188,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3ef]"></a>igmp_send_report</STRONG> (Thumb, 116 bytes, Stack size 40 bytes, net_igmp.o(.text.igmp_send_report))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = igmp_send_report &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = igmp_send_report &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
 <LI><a href="#[3f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum_buf
@@ -9215,7 +9215,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[380]"></a>que_free_list</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, net_ip4_frag.o(.text.que_free_list))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = que_free_list &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = que_free_list &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
@@ -9223,12 +9223,12 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[37f]"></a>OUTLINED_FUNCTION_0</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_ip4_frag.o(.text.OUTLINED_FUNCTION_0))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = OUTLINED_FUNCTION_0 &rArr; que_free_list &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[380]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;que_free_list
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_run
-<LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_add
+<BR>[Called By]<UL><LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_add
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_frag_run
 </UL>
 
 <P><STRONG><a name="[38d]"></a>OUTLINED_FUNCTION_1</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, net_ip4_frag.o(.text.OUTLINED_FUNCTION_1))
@@ -9258,10 +9258,10 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_socket_init
-<LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_open
+<BR>[Called By]<UL><LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_open
 <LI><a href="#[45e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_socket
 <LI><a href="#[46a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_close
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_socket_init
 </UL>
 
 <P><STRONG><a name="[481]"></a>OUTLINED_FUNCTION_2</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, net_udp.o(.text.OUTLINED_FUNCTION_2))
@@ -9269,47 +9269,47 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[398]"></a>tcp_send_ctrl</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, net_tcp.o(.text.tcp_send_ctrl))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
-<LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_abort
+<BR>[Called By]<UL><LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_abort
 <LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
 <LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_6
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
 </UL>
 
 <P><STRONG><a name="[46b]"></a>tcp_transit</STRONG> (Thumb, 112 bytes, Stack size 0 bytes, net_tcp.o(.text.tcp_transit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = tcp_transit &rArr; tcp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = tcp_transit &rArr; tcp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_que_free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
-<LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
+<BR>[Called By]<UL><LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
 <LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_abort
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
 </UL>
 
 <P><STRONG><a name="[479]"></a>tcp_send_data</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, net_tcp.o(.text.tcp_send_data))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = tcp_send_data &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = tcp_send_data &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<BR>[Calls]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[443]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_send
 <LI><a href="#[47d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_que_resend
 </UL>
 
 <P><STRONG><a name="[47d]"></a>tcp_que_resend</STRONG> (Thumb, 156 bytes, Stack size 24 bytes, net_tcp.o(.text.tcp_que_resend))
-<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = tcp_que_resend &rArr; OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = tcp_que_resend &rArr; OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
+<BR>[Calls]<UL><LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
 <LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_data
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
 </UL>
@@ -9320,21 +9320,21 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[47e]"></a>tcp_que_free</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, net_tcp.o(.text.tcp_que_free))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = tcp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = tcp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
-<LI><a href="#[46b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_transit
+<BR>[Called By]<UL><LI><a href="#[46b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_transit
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
 </UL>
 
 <P><STRONG><a name="[46d]"></a>tcp_send_reset</STRONG> (Thumb, 152 bytes, Stack size 32 bytes, net_tcp.o(.text.tcp_send_reset))
-<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = tcp_send_reset &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = tcp_send_reset &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<BR>[Calls]<UL><LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[484]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
 </UL>
@@ -9356,16 +9356,16 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[484]"></a>tcp_write</STRONG> (Thumb, 260 bytes, Stack size 40 bytes, net_tcp.o(.text.tcp_write))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
-<LI><a href="#[416]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_get_local
+<BR>[Calls]<UL><LI><a href="#[416]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_get_local
 <LI><a href="#[44a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_tx_offl_hl
 <LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
 <LI><a href="#[446]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chksum
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_chksum
 <LI><a href="#[44d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_tx_offl_hl
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip4_send_frame
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_reset
 <LI><a href="#[479]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_data
@@ -9377,13 +9377,13 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_set_option
+<BR>[Called By]<UL><LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_set_option
 <LI><a href="#[443]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_send
 <LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
 <LI><a href="#[43f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_get_socket
 <LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
 <LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_abort
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
 </UL>
 
 <P><STRONG><a name="[38f]"></a>OUTLINED_FUNCTION_1</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, net_tcp.o(.text.OUTLINED_FUNCTION_1))
@@ -9399,11 +9399,11 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_init
-<LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
+<BR>[Called By]<UL><LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
 <LI><a href="#[43f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_get_socket
 <LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
 <LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_abort
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_init
 </UL>
 
 <P><STRONG><a name="[478]"></a>OUTLINED_FUNCTION_3</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, net_tcp.o(.text.OUTLINED_FUNCTION_3))
@@ -9423,7 +9423,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3b4]"></a>OUTLINED_FUNCTION_6</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, net_tcp.o(.text.OUTLINED_FUNCTION_6))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = OUTLINED_FUNCTION_6 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = OUTLINED_FUNCTION_6 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_ctrl
 </UL>
@@ -9451,14 +9451,14 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[397]"></a>OUTLINED_FUNCTION_11</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_tcp.o(.text.OUTLINED_FUNCTION_11))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = OUTLINED_FUNCTION_11 &rArr; tcp_send_ctrl &rArr; tcp_write &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_send_ctrl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
-<LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
+<BR>[Called By]<UL><LI><a href="#[444]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_close
 <LI><a href="#[47d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_que_resend
+<LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_process
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_socket_run
 </UL>
 
 <P><STRONG><a name="[47c]"></a>OUTLINED_FUNCTION_12</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, net_tcp.o(.text.OUTLINED_FUNCTION_12))
@@ -9514,17 +9514,17 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[c9]"></a>nbns_listener</STRONG> (Thumb, 424 bytes, Stack size 48 bytes, net_nbns_client.o(.text.nbns_listener))
-<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = nbns_listener &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = nbns_listener &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[3f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strtoupper
+<BR>[Calls]<UL><LI><a href="#[3f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strtoupper
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send_if
 <LI><a href="#[3fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_buf
 <LI><a href="#[3f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_nbns_client.o(.text.net_nbns_client_init)
 </UL>
@@ -9541,9 +9541,6 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_ProcessData
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_ProcessQuery
-<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 <LI><a href="#[3de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strnchr
 <LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcmp
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcasecmp
@@ -9563,15 +9560,18 @@ Local Symbols
 <LI><a href="#[3bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_uri
 <LI><a href="#[3b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_script_line
 <LI><a href="#[3da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_kill_session
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_http_server.o(.text.net_http_server_init)
 </UL>
 <P><STRONG><a name="[3e8]"></a>http_server_start</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, net_http_server.o(.text.http_server_start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = http_server_start &rArr; net_tcp_set_option &rArr; EventRecord2 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = http_server_start &rArr; net_tcp_set_option &rArr; OUTLINED_FUNCTION_0 &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_set_option
+<BR>[Calls]<UL><LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_set_option
 <LI><a href="#[3e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_tcp_listen
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_init
 </UL>
@@ -9579,29 +9579,28 @@ Local Symbols
 <P><STRONG><a name="[3da]"></a>http_kill_session</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, net_http_server.o(.text.http_kill_session))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = http_kill_session &rArr; OUTLINED_FUNCTION_3 &rArr; netCGI_ProcessData &rArr; netHTTPs_SetPassword &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<BR>[Calls]<UL><LI><a href="#[3a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fclose
-<LI><a href="#[3a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3b0]"></a>read_script_line</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, net_http_server.o(.text.read_script_line))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = read_script_line
 </UL>
-<BR>[Calls]<UL><LI><a href="#[483]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fgets
-<LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
+<BR>[Calls]<UL><LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_5
+<LI><a href="#[483]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fgets
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_4
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
 </UL>
 
 <P><STRONG><a name="[3d0]"></a>http_add_header</STRONG> (Thumb, 728 bytes, Stack size 48 bytes, net_http_server.o(.text.http_add_header))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = http_add_header &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = http_add_header &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ultoa
+<BR>[Calls]<UL><LI><a href="#[3d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ultoa
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcpy
 <LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcmp
 <LI><a href="#[3d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_itoa
@@ -9610,6 +9609,7 @@ Local Symbols
 <LI><a href="#[3d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_Charset
 <LI><a href="#[384]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add_server_id
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
@@ -9617,33 +9617,33 @@ Local Symbols
 <P><STRONG><a name="[3ce]"></a>http_strcpy</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, net_http_server.o(.text.http_strcpy))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = http_strcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
+<BR>[Called By]<UL><LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;chk_post_req
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3b6]"></a>http_open_file</STRONG> (Thumb, 412 bytes, Stack size 48 bytes, net_http_server.o(.text.http_open_file))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = http_open_file &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageFileInfo
-<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fstat
-<LI><a href="#[3e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fopen
 <LI><a href="#[3e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_path
 <LI><a href="#[3df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_FileAccess
 <LI><a href="#[3e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_Redirect
 <LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fstat
+<LI><a href="#[3e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_fopen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_6
+<BR>[Called By]<UL><LI><a href="#[3b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_6
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3d2]"></a>add_server_id</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, net_http_server.o(.text.add_server_id))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = add_server_id
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
+<BR>[Called By]<UL><LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3bb]"></a>http_proc_uri</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, net_http_server.o(.text.http_proc_uri))
@@ -9660,13 +9660,13 @@ Local Symbols
 <P><STRONG><a name="[3c2]"></a>http_parse_header</STRONG> (Thumb, 576 bytes, Stack size 64 bytes, net_http_server.o(.text.http_parse_header))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = http_parse_header &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[3de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strnchr
+<BR>[Calls]<UL><LI><a href="#[3de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strnchr
 <LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcmp
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcasecmp
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_atoi
 <LI><a href="#[3e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_ProcessCookie
 <LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_field
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_9
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
@@ -9683,16 +9683,16 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3ca]"></a>chk_post_req</STRONG> (Thumb, 320 bytes, Stack size 40 bytes, net_http_server.o(.text.chk_post_req))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = chk_post_req &rArr; net_mem_alloc &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = chk_post_req &rArr; net_mem_alloc &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcmp
+<BR>[Calls]<UL><LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcmp
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcasecmp
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_atoi
 <LI><a href="#[3cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_par
 <LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_field
 <LI><a href="#[3ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_strcpy
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
 </UL>
@@ -9701,12 +9701,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = http_proc_post &rArr; netCGI_ProcessData &rArr; netHTTPs_SetPassword &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netCGI_ProcessData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
-<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 <LI><a href="#[3a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
 </UL>
@@ -9737,8 +9737,8 @@ Local Symbols
 <P><STRONG><a name="[384]"></a>OUTLINED_FUNCTION_0</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, net_http_server.o(.text.OUTLINED_FUNCTION_0))
 <BR><BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
+<BR>[Called By]<UL><LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_add_header
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[391]"></a>OUTLINED_FUNCTION_1</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, net_http_server.o(.text.OUTLINED_FUNCTION_1))
@@ -9746,9 +9746,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
+<BR>[Called By]<UL><LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
 <LI><a href="#[3b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_open_file
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3a1]"></a>OUTLINED_FUNCTION_2</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_http_server.o(.text.OUTLINED_FUNCTION_2))
@@ -9756,9 +9756,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
-<LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
+<BR>[Called By]<UL><LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_proc_post
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;http_listener
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_http_server_run
 </UL>
 
 <P><STRONG><a name="[3a8]"></a>OUTLINED_FUNCTION_3</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, net_http_server.o(.text.OUTLINED_FUNCTION_3))
@@ -9845,36 +9845,36 @@ Local Symbols
 <P><STRONG><a name="[113]"></a>http_auth_basic_parse</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, net_http_server_auth.o(.text.http_auth_basic_parse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = http_auth_basic_parse &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[3d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_base64_decode
+<BR>[Calls]<UL><LI><a href="#[3d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_base64_decode
 <LI><a href="#[3d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netHTTPs_CheckAccount
 <LI><a href="#[3d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strchr
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_strcasecmp
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_http_server_auth.o(.rodata.net_http_auth_basic_func)
 </UL>
 <P><STRONG><a name="[ca]"></a>sntp_listener</STRONG> (Thumb, 244 bytes, Stack size 32 bytes, net_sntp_client_core.o(.text.sntp_listener))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = sntp_listener &rArr; OUTLINED_FUNCTION_2 &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
+<BR>[Calls]<UL><LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_3
 <LI><a href="#[3a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[468]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_stop
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> net_sntp_client_core.o(.text.net_sntp_client_init)
 </UL>
 <P><STRONG><a name="[467]"></a>sntp_send_message</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, net_sntp_client_core.o(.text.sntp_send_message))
-<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip4_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = sntp_send_message &rArr; net_udp_send &rArr; net_udp_send_if &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[480]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send
+<BR>[Calls]<UL><LI><a href="#[480]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_send
 <LI><a href="#[3fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_get_buf
 <LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_run
-<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<BR>[Called By]<UL><LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_run
 </UL>
 
 <P><STRONG><a name="[468]"></a>sntp_stop</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, net_sntp_client_core.o(.text.sntp_stop))
@@ -9882,8 +9882,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[46a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_udp_close
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_run
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_listener
+<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_listener
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_run
 </UL>
 
 <P><STRONG><a name="[385]"></a>OUTLINED_FUNCTION_0</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_sntp_client_core.o(.text.OUTLINED_FUNCTION_0))
@@ -9891,9 +9891,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_init
-<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<BR>[Called By]<UL><LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_listener
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_init
 </UL>
 
 <P><STRONG><a name="[392]"></a>OUTLINED_FUNCTION_1</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, net_sntp_client_core.o(.text.OUTLINED_FUNCTION_1))
@@ -9909,9 +9909,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_run
-<LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
+<BR>[Called By]<UL><LI><a href="#[40b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_start
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sntp_listener
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_sntp_client_run
 </UL>
 
 <P><STRONG><a name="[3a9]"></a>OUTLINED_FUNCTION_3</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, net_sntp_client_core.o(.text.OUTLINED_FUNCTION_3))
@@ -9921,7 +9921,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[466]"></a>ping_send_req</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, net_ping_core.o(.text.ping_send_req))
-<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = ping_send_req &rArr; net_icmp6_send_echo &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = ping_send_req &rArr; net_icmp6_send_echo &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send_echo
 <LI><a href="#[44c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp_send_echo
@@ -9980,30 +9980,30 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[3fc]"></a>ndp_cache_add</STRONG> (Thumb, 272 bytes, Stack size 40 bytes, net_ndp.o(.text.ndp_cache_add))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ndp_cache_add &rArr; EventRecordData &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = ndp_cache_add &rArr; OUTLINED_FUNCTION_0 &rArr; EventRecordData &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
-<LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[39b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_11
 <LI><a href="#[3a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_2
 <LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_0
 <LI><a href="#[3fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_alloc
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
+<LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 </UL>
 
 <P><STRONG><a name="[401]"></a>ndp_send_reply</STRONG> (Thumb, 152 bytes, Stack size 40 bytes, net_ndp.o(.text.ndp_send_reply))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = ndp_send_reply &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 <LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
-<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OUTLINED_FUNCTION_1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 </UL>
@@ -10011,30 +10011,30 @@ Local Symbols
 <P><STRONG><a name="[3fd]"></a>ndp_cache_alloc</STRONG> (Thumb, 128 bytes, Stack size 20 bytes, net_ndp.o(.text.ndp_cache_alloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = ndp_cache_alloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
+<BR>[Called By]<UL><LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 </UL>
 
 <P><STRONG><a name="[3ff]"></a>ndp_que_free</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, net_ndp.o(.text.ndp_que_free))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = ndp_que_free &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = ndp_que_free &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 </UL>
 
 <P><STRONG><a name="[403]"></a>ndp_send_request</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, net_ndp.o(.text.ndp_send_request))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = ndp_send_request &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; EventRecord4 &rArr; EventRecordItem
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = ndp_send_request &rArr; net_icmp6_send &rArr; net_ip6_send_frame &rArr; net_ip4_frag_get &rArr; net_mem_free &rArr; mem_unlock &rArr; netos_unlock &rArr; osMutexRelease &rArr; EvrRtxMutexRelease &rArr; EventRecord2 &rArr; EventRecordItem
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
+<BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
+<LI><a href="#[404]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_get_local
+<LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecord2
 <LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
 <LI><a href="#[3fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_addr6_copy
-<LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[402]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_icmp6_send
-<LI><a href="#[404]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_get_local
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_enqueue
 </UL>
@@ -10052,18 +10052,18 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EventRecordData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[430]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_refresh
-<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 <LI><a href="#[3fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_cache_add
+<LI><a href="#[430]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_refresh
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 </UL>
 
 <P><STRONG><a name="[394]"></a>OUTLINED_FUNCTION_1</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_ndp.o(.text.OUTLINED_FUNCTION_1))
 <BR><BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
 <LI><a href="#[401]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ndp_send_reply
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 </UL>
 
 <P><STRONG><a name="[3a3]"></a>OUTLINED_FUNCTION_2</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, net_ndp.o(.text.OUTLINED_FUNCTION_2))
@@ -10076,8 +10076,8 @@ Local Symbols
 <P><STRONG><a name="[3ab]"></a>OUTLINED_FUNCTION_3</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, net_ndp.o(.text.OUTLINED_FUNCTION_3))
 <BR><BR>[Calls]<UL><LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
-<LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<BR>[Called By]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_process
+<LI><a href="#[43b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ndp_cache_find
 </UL>
 
 <P><STRONG><a name="[3b2]"></a>OUTLINED_FUNCTION_5</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, net_ndp.o(.text.OUTLINED_FUNCTION_5))
@@ -10130,8 +10130,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[457]"></a>ip6_get_mtu</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, net_ip6.o(.text.ip6_get_mtu))
-<BR><BR>[Called By]<UL><LI><a href="#[42f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chk_frame
-<LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<BR><BR>[Called By]<UL><LI><a href="#[448]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_send_frame
+<LI><a href="#[42f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_ip6_chk_frame
 </UL>
 
 <P><STRONG><a name="[38a]"></a>OUTLINED_FUNCTION_0</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, net_ip6.o(.text.OUTLINED_FUNCTION_0))
@@ -10145,9 +10145,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_lock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<BR>[Called By]<UL><LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
 </UL>
 
 <P><STRONG><a name="[3f7]"></a>mem_unlock</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, net_mem.o(.text.mem_unlock))
@@ -10155,9 +10155,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netos_unlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
+<BR>[Called By]<UL><LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
+<LI><a href="#[3c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_free
 <LI><a href="#[3c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_alloc
-<LI><a href="#[45d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;net_mem_shrink
 </UL>
 
 <P><STRONG><a name="[426]"></a>crc32_8bit</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, net_common.o(.text.crc32_8bit))
