@@ -20,6 +20,7 @@
 #include  "RTC.h"
 #include <stdio.h>
 #include "SNTP.h"
+#include "PWR.h"
 
 // Main stack size must be multiple of 8 Bytes
 #define APP_MAIN_STK_SZ (1024U)
@@ -59,10 +60,12 @@ osThreadId_t TID_Led;
 osThreadId_t TID_RTC;
 osThreadId_t TID_Alarma;
 osThreadId_t TID_SNTP;
+osThreadId_t TID_PWR;
 													 
 osTimerId_t id_tim_1s;
 osTimerId_t id_tim_6s;
 osTimerId_t id_tim_3m;
+osTimerId_t id_tim_sleepOff;
 uint16_t timer_1seg=0;
 													 
 //CALLBACKS TIMERS
@@ -70,6 +73,7 @@ static void SetTimers (void);
 void Timer_Callback_1s (void);
 void Timer_Callback_6s (void);
 void Timer_Callback_3m (void);
+void Timer_Callback_SleepOff (void);
 
 /* Thread declarations */
 static void BlinkLed (void *arg);
@@ -77,6 +81,7 @@ static void Display  (void *arg);
 static void parpadeoAlarma (void *arg);
 static void actualizarRTC (void *arg);
 static void sincroSNTP (void *arg);
+static void cambioModo (void *arg);;
 													 
 __NO_RETURN void app_main (void *arg);
 
@@ -85,10 +90,15 @@ static void SetTimers (void){
 	id_tim_1s= osTimerNew((osTimerFunc_t)Timer_Callback_1s, osTimerPeriodic, NULL,NULL);
   id_tim_6s= osTimerNew((osTimerFunc_t)Timer_Callback_6s, osTimerOnce, NULL,NULL);
 	id_tim_3m= osTimerNew((osTimerFunc_t)Timer_Callback_3m, osTimerPeriodic, NULL,NULL);
+	id_tim_sleepOff = osTimerNew((osTimerFunc_t)Timer_Callback_SleepOff, osTimerPeriodic, NULL, NULL);
+}
 
+void Timer_Callback_SleepOff (void) {
+  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0); 
 }
 
 void Timer_Callback_1s () { // Recordar el argumento void *
+	
   if (timer_1seg < 40) { // 40 veces a 100ms = 4 segundos
     HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14); // LED Rojo (PB14)
     timer_1seg++;
@@ -147,6 +157,72 @@ void netDHCP_Notify (uint32_t if_num, uint8_t option, const uint8_t *val, uint32
   }
 }
 
+static __NO_RETURN void cambioModo (void *arg){
+	
+//		GPIO_InitTypeDef GPIO_InitStruct;
+//    GPIO_InitStruct.Pin = GPIO_PIN_14;
+//    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+//    GPIO_InitStruct.Pull = GPIO_NOPULL;
+//    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+//    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+//	
+//		 osDelay(150);   // esperar 15 s
+//	
+//		 osThreadSuspend(TID_Display);
+//     osThreadSuspend(TID_RTC);
+//     osThreadSuspend(TID_Alarma);
+
+//    // encender LED rojo (indicador antes de dormir)
+//		 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+
+//    // entrar en modo sleep
+//    //HAL_SuspendTick();
+//    SleepMode_Measure();      // el botón azul (EXTI) despertará la CPU
+//   // HAL_ResumeTick();
+////	 GPIO_InitTypeDef GPIO_InitStruct = {0};
+////   GPIO_InitStruct.Pin = GPIO_PIN_14;
+////   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+////   GPIO_InitStruct.Pull = GPIO_NOPULL;
+////   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+////   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+//   // Apagar el LED rojo
+//   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+
+//    /* al despertar hay que restaurar el GPIO */
+//   // __HAL_RCC_GPIOB_CLK_ENABLE();
+
+//   
+
+//    // apagar LED rojo al salir del sleep
+//   // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+//	 
+//	 // 5. REANUDAR LOS HILOS
+//        osThreadResume(TID_Display);
+//        osThreadResume(TID_RTC);
+//        osThreadResume(TID_Alarma);
+
+//    while(1){
+//        osDelay(osWaitForever);
+//    }
+
+				osDelay(15000); 
+				
+				osTimerStop(id_tim_sleepOff);
+				//osThreadSuspend (TID_Alarma);
+        // 2. Encender LED rojo ANTES de entrar en Sleep (Requisito PDF)
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+
+        // 3. Llamar a nuestra función de Sleep segura
+        SleepMode_Measure(); 
+				//osThreadResume(TID_Alarma);
+        // -- EL MICRO SE DESPIERTA AQUÍ TRAS PULSAR EL BOTÓN AZUL --
+
+        // 4. Apagar LED rojo NADA MÁS SALIR del Sleep (Requisito PDF)
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+				
+				osTimerStart(id_tim_sleepOff, 100U);
+	}
 
 static __NO_RETURN void sincroSNTP (void *arg) {
 	
@@ -288,18 +364,23 @@ __NO_RETURN void app_main (void *arg) {
   netInitialize ();
 	
 	RTC_Init();
-	setAlarma();
+	//setAlarma();
 	
 	SetTimers();
 	osTimerStart(id_tim_6s, 6000);
+	//get_time ();
 	
 	init_Pulsador();
-
+	
+	PWR_Init();
+	osTimerStart(id_tim_sleepOff, 100U);
+	
   //TID_Led     = osThreadNew (BlinkLed, NULL, NULL);
   TID_Display = osThreadNew (Display,  NULL, NULL);
 	TID_RTC			 = osThreadNew (actualizarRTC,  NULL, NULL);
 	TID_Alarma	 = osThreadNew (parpadeoAlarma,  NULL, NULL);
 	TID_SNTP = osThreadNew (sincroSNTP,  NULL, NULL);
+	TID_PWR =osThreadNew(cambioModo, NULL, NULL);
 
   osThreadExit();
 }

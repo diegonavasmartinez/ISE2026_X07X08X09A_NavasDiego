@@ -267,11 +267,12 @@ ARM Macro Assembler    Page 5
 Local\Arm\Packs\Keil\MDK-Middleware\7.15.0\Network\Include -IC:\Users\diego\App
 Data\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4x
 x\Include -IC:\Users\diego\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Dr
-ivers\STM32F4xx_HAL_Driver\Inc --predefine="__RTX SETA 1" --predefine="__MICROL
-IB SETA 1" --predefine="__UVISION_VERSION SETA 534" --predefine="_RTE_ SETA 1" 
---predefine="STM32F429xx SETA 1" --predefine="_RTE_ SETA 1" --list=.\debug\irq_
-armv7m.lst C:\Users\diego\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\R
-TX\Source\ARM\irq_armv7m.s
+ivers\STM32F4xx_HAL_Driver\Inc -IC:\Users\diego\AppData\Local\Arm\Packs\Keil\ST
+M32F4xx_DFP\2.15.0\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy --predefine="__RTX S
+ETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 534"
+ --predefine="_RTE_ SETA 1" --predefine="STM32F429xx SETA 1" --predefine="_RTE_
+ SETA 1" --list=.\debug\irq_armv7m.lst C:\Users\diego\AppData\Local\Arm\Packs\A
+RM\CMSIS\5.8.0\CMSIS\RTOS2\RTX\Source\ARM\irq_armv7m.s
 
 
 

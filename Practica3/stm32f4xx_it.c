@@ -85,7 +85,15 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc){
 //INTERRUPCION DEL PULSADOR, QUE LE ENVIARA FLAG AL HILO PARA GESTIONAR ACCION
 
 void EXTI15_10_IRQHandler(void){ 
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13); 
+  if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_13) != RESET) 
+  {
+    // Limpiamos la bandera en el hardware. 
+    // Esto es OBLIGATORIO para no quedarnos atrapados en un bucle infinito aquí.
+    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_13); 
+    
+    // Le decimos a tu hilo de red que es hora de hacer cosas
+    osThreadFlagsSet(TID_SNTP, 0x01U);
+  }
   
 }
 

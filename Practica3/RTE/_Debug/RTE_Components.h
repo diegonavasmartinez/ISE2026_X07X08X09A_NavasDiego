@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'HTTP_Server_RTC' 
+ * Project: 'HTTP_Server_PWR' 
  * Target:  'Debug' 
  */
 
