@@ -214,7 +214,8 @@ static __NO_RETURN void cambioModo (void *arg){
         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
 
         // 3. Llamar a nuestra función de Sleep segura
-        SleepMode_Measure(); 
+        //SleepMode_Measure(); 
+				StopMode_Measure();
 				//osThreadResume(TID_Alarma);
         // -- EL MICRO SE DESPIERTA AQUÍ TRAS PULSAR EL BOTÓN AZUL --
 

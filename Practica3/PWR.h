@@ -22,12 +22,14 @@
 #define RTC_ASYNCH_PREDIV  127
 #define RTC_SYNCH_PREDIV   255
 
-#define SLEEP_MODE
-/* #define STOP_MODE */
+//#define SLEEP_MODE
+#define STOP_MODE 
 /* #define STOP_UNDERDRIVE_MODE */
 /* #define STANDBY_MODE */
 /* #define STANDBY_RTC_MODE */
 /* #define STANDBY_RTC_BKPSRAM_MODE */
+
+extern RTC_HandleTypeDef RTCHandle;
 
 void PWR_Init(void);
 void init_PulsadorPWR (void);
